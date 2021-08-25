@@ -8,6 +8,8 @@ user1 = User.create(username: 'Maxence', email: 'maxencelerouge1@gmail.com', pas
 user2 = User.create(username: 'Estelle', email: 'estelle.dourthe40@orange.fr', password: 'anniversaire')
 user3 = User.create(username: 'Violette', email: 'violetteruccio@gmail.com', password: 'anniversaire')
 
+project1 = Project.create(user: user1, title: "Mon superbe Appart", project_type: "appartement", address: "avenue des saules Lomme")
+
 #STEP 1
 step1 = Step.create(number: 1, title: "Se préparer à la vente")
 step2 = Step.create(number: 2, title: "Les questions financières")
