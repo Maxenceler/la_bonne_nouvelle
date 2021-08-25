@@ -1,0 +1,74 @@
+
+<div class="container">
+<div class="flex-photos-index">
+  <div class="card-text">
+    <h1 id="index-title"><%= "Bienvenue #{current_user.email}" %></h1>
+    <p id="p-margin-bottom-index">Vous avez décidé de vendre votre bien et nous allons vous accompagner. Pour commencer et accéder aux conseils personnalisés de notre ChatBot Violette, créez votre projet.  </p>
+    <%= link_to "Créez votre projet", new_project_path, class: "purple-btn" %>
+  </div>
+
+    <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2Vic2l0ZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+</div>
+
+
+<h2>Vos projets</h2>
+
+    <% @projects.each do |project| %>
+      <%= link_to project_path(project) data_bs_toggle: "modal", data_bs_target: "#modal-example" do  %>
+      <%= render "shared/card_project", project: project %>
+      <% end %>
+    <% end %>
+
+<%# modal %>
+
+
+    <div class="modal" tabindex="-1" id="modal-example">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <%= simple_form_for(@project) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :address %>
+        <%= f.input :type %>
+        <%= f.submit %>
+      <% end %>
+
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  color: black;
+}
+
+.card-trip:hover {
+  transform: scale(1.04);
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  text-decoration: none;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.cards-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+a {
+    text-decoration: inherit;
+}
+
+
+.card-text {
+  width: 600px;
+}
+
+.purple-btn {
+  padding: 12px 20px;
+ background-color: #8C30F5;
+ color: white;
+ border-radius: 4px;
+ text-decoration: inherit;
+ transition: 0.3s;
+ font-size: 20px;
+}
+
+.purple-btn:hover {
+  box-shadow: 1px 1px 1px #8C30F5;
+  color: white;
+
+}
+
+.flex-photos-index {
+  display: flex;
+  flex-direction: row;
+}
+
+
+#p-margin-bottom-index {
+  margin-bottom: 30px;
+}
+
+#index-title {
+  font-weight: bold;
+  font-size: 40px;
+}
