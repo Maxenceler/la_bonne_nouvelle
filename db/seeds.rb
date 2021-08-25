@@ -3,10 +3,26 @@
 
 Response.destroy_all
 Question.destroy_all
+Project.destroy_all
+User.destroy_all
 
 user1 = User.create(username: 'Maxence', email: 'maxencelerouge1@gmail.com', password: 'anniversaire')
 user2 = User.create(username: 'Estelle', email: 'estelle.dourthe40@orange.fr', password: 'anniversaire')
 user3 = User.create(username: 'Violette', email: 'violetteruccio@gmail.com', password: 'anniversaire')
+
+project1 = Project.new(title: "Mon superbe Appart", project_type: "appartement", address: "avenue des saules Lomme")
+project1.user = user1
+project1.save
+
+project2 = Project.new(title: "Ma belle Maison", project_type: "maison", address: "avenue de l'Hippodrome Lambersart")
+project2.user = user2
+project2.save
+
+
+project1 = Project.new(title: "Mon Appart stylé", project_type: "appartement", address: "place du Maréchal Leclerc")
+project1.user = user1
+project1.save
+
 
 #STEP 1
 step1 = Step.create(number: 1, title: "Se préparer à la vente")

@@ -4,6 +4,6 @@ class Project < ApplicationRecord
   has_many :response_projects
 
   validates :address, presence: true
-  validates :type, presence: true
+  validates :project_type, presence: true
   validates :title, presence: true
 end
