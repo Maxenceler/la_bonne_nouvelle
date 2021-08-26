@@ -6,4 +6,6 @@ class Project < ApplicationRecord
   validates :address, presence: true
   validates :project_type, presence: true
   validates :title, presence: true
+  has_many_attached :photos
+  has_one_attached :main_photo
 end
