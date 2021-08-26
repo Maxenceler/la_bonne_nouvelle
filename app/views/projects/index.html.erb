@@ -45,6 +45,7 @@
     <% @projects.each do |project| %>
       <%= link_to project_path(project) do  %>
       <%= render "shared/card_project", project: project %>
+      <%= link_to "chatbot", chatbot_project_path(project)  %>
       <% end %>
     <% end %>
   </div>
