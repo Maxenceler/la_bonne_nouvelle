@@ -1,7 +1,8 @@
 .navbar-lbn {
   justify-content: space-between;
   background: white;
-  position: sticky
+  position: sticky;
+  color:black;
 }
 
 .navbar-lbn .navbar-collapse {
@@ -14,7 +15,40 @@
   margin-left: 10px;
 }
 
-.nav-item-lbn
-{
-  color: black;
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+}
+
+.nav-link a:hover {
+font-weight: bold;
+$purple: #8C30F5;
+}
+
+.btn-lbn-p {
+  color:#8C30F5;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #F1E4FF;
+  transition: background 0.3s ease;
+}
+
+.btn-lbn-p:hover {
+  text-decoration: none;
+  color:#8C30F5;
+  background: #e9d8fc;
+}
+
+.btn-lbn-pl {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #8C30F5;
+  transition: background 0.3s ease;
+  margin-left: 9px;
+}
+
+.btn-lbn-pl:hover {
+  text-decoration: none;
+  color: white;
+  background: #9645f1;
 }
