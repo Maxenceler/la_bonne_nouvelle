@@ -1,41 +1,51 @@
 <div class="container">
 
-  <div class="titles-hp">
-      <h1 class="h1-hp">Votre Projet</h1>
-      <h2 class="h2-hp">- <%= @project.title %> -</h2>
+  <div class="titles-show">
+      <h1 class="title-show">Votre Projet</h1>
+      <h2 class="subtitle-show">- <%= @project.title %> -</h2>
   </div>
 
-                                <%# PROGRESSION %>
+                                  <%# PROGRESSION %>
+  <div class="background-progression">
+    <div class="progression-show">
 
-  <div class="progression-show">
+      <h2 class="h2-progression-show">- Votre Progression -</h2>
 
-    <h2 class="h2-progression-show">- Votre Progression -</h2>
+      <div class="schema-progression-show">
 
-    <div class="schema-progression-show">
+        <div class="steps-progression-show">
+          <%= link_to chatbot_project_path do %>
+            <%= image_tag "https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80", class: "img-progression-show" %>
+          <% end %>
+          <p class="step-progression-show">ÉTAPE 1</p>
+          <p class="stepcontent-progression-show">Se Préparer à la vente</p>
+        </div>
 
-      <div class="steps-progression-show">
-        <img src="https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" class="img-progression-show">
-        <p class="step-progression-show">ÉTAPE 1</p>
-        <p class="stepcontent-progression-show">Se Préparer à la vente</p>
+        <div class="steps-progression-show">
+          <%= link_to chatbot_project_path do %>
+            <%= image_tag "https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80", class: "img-progression-show"%>
+          <% end %>
+          <p class="step-progression-show">ÉTAPE 2</p>
+          <p class="stepcontent-progression-show">Les Questions Financières</p>
+        </div>
+
+        <div class="steps-progression-show">
+          <%= link_to chatbot_project_path do %>
+            <%= image_tag "https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80", class: "img-progression-show"%>
+          <% end %>
+          <p class="step-progression-show">ÉTAPE 3</p>
+          <p class="stepcontent-progression-show">Trouver un Acheteur</p>
+        </div>
+
+        <div class="steps-progression-show">
+          <%= link_to chatbot_project_path do %>
+            <%= image_tag "https://images.unsplash.com/photo-1584985429926-08867327d3a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80", class: "img-progression-show"%>
+          <% end %>
+          <p class="step-progression-show">ÉTAPE 4</p>
+          <p class="stepcontent-progression-show">Finalisation de la Vente</p>
+        </div>
       </div>
 
-      <div class="steps-progression-show">
-        <img src="https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" class="img-progression-show">
-        <p class="step-progression-show">ÉTAPE 2</p>
-        <p class="stepcontent-progression-show">Les Questions Financières</p>
-      </div>
-
-      <div class="steps-progression-show">
-        <img src="https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" class="img-progression-show">
-        <p class="step-progression-show">ÉTAPE 3</p>
-        <p class="stepcontent-progression-show">Trouver un Acheteur</p>
-      </div>
-
-      <div class="steps-progression-show">
-        <img src="https://images.unsplash.com/photo-1584985429926-08867327d3a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" class="img-progression-show">
-        <p class="step-progression-show">ÉTAPE 4</p>
-        <p class="stepcontent-progression-show">Finalisation de la Vente</p>
-      </div>
     </div>
 
   </div>
@@ -117,7 +127,7 @@
         <img src="https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" class="img-card-infosaved-show">
 
           <div class="card-content-infosaved-show">
-            <h2>Information titre</h2>
+            <h2 class="info-title-infosaved-show">Information titre</h2>
             <hr>
             <p>Information contenu</p>
           </div>
@@ -127,7 +137,7 @@
         <img src="https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" class="img-card-infosaved-show">
 
           <div class="card-content-infosaved-show">
-            <h2>Information titre</h2>
+            <h2 class="info-title-infosaved-show">Information titre</h2>
             <hr>
             <p>Information contenu</p>
           </div>
@@ -137,7 +147,7 @@
         <img src="https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" class="img-card-infosaved-show">
 
           <div class="card-content-infosaved-show">
-            <h2>Information titre</h2>
+            <h2 class="info-title-infosaved-show">Information titre</h2>
             <hr>
             <p>Information contenu</p>
           </div>
