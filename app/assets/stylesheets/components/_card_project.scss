@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   transition: 0.3s;
   color: black;
+  height: 100%;
 }
 
 .card-trip:hover {
@@ -47,18 +48,13 @@
   width: 40px;
 }
 
-.cards-project {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
 
 a {
     text-decoration: inherit;
 }
 
 
-.card-text {
+.card-text-index {
   width: 600px;
 }
 
@@ -70,6 +66,7 @@ a {
  text-decoration: inherit;
  transition: 0.3s;
  font-size: 20px;
+ border: none;
 }
 
 .purple-btn:hover {
@@ -91,4 +88,23 @@ a {
 #index-title {
   font-weight: bold;
   font-size: 40px;
+}
+
+.blue-button-form {
+  background-color:#0275d8;
+  color: white;
+  width: 100;
+  padding: 6px 10px;
+  border: none;
+}
+
+.title-modal-index {
+  text-align: center;
+}
+
+
+.align-form-by-two-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 24px;
 }

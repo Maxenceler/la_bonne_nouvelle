@@ -1,48 +1,50 @@
 <div class="container">
   <div class="flex-photos-index">
-    <div class="card-text">
-      <h1 id="index-title"><%= "Bienvenue #{current_user.email}" %></h1>
+    <div class="card-text-index">
+      <h1 id="index-title"><%= "Bienvenue #{current_user.username}" %></h1>
       <p id="p-margin-bottom-index">Vous avez décidé de vendre votre bien et nous allons vous accompagner. Pour commencer et accéder aux conseils personnalisés de notre ChatBot Violette, créez votre projet.  </p>
-      <%= link_to "Créez votre projet", new_project_path, class: "purple-btn" %>
+      <button type="button" class="purple-btn" data-toggle="modal" data-target="#exampleModalCenter">
+        Créez votre projet
+      </button>
     </div>
 
       <img src="https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2Vic2l0ZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
   </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
+
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for(@project) do |f| %>
-            <%= f.input :title, label: false, placeholder: "Title" %>
-            <%= f.input :address, label: false, placeholder: "Address" %>
-            <%= f.input :project_type, label: false, placeholder: "Type" %>
-            <%= f.submit %>
-            <% end %>
-      </div>
-      <div class="modal-footer">
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title title-modal-index" id="exampleModalLongTitle">Votre projet</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(@project) do |f| %>
+              <%= f.input :title, label: false, placeholder: "Title" %>
+              <%= f.input :address, label: false, placeholder: "Address" %>
+              <div class="align-form-by-two-index">
+                <%= f.input :project_type, label: false, default: "Type", collection: ["Appartement", "Maison"] %>
+                <%= f.input :living_area, label: false, placeholder: "Surface" %>
+              </div>
+              <%= f.button :submit, "Créer votre projet", class: "w-100 blue-button-form" %>
+              <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
-<h2>Vos projets</h2>
-
-  <% @projects.each do |project| %>
-    <%= link_to project_path(project) do  %>
-    <%= render "shared/card_project", project: project %>
+  <h2>Vos projets</h2>
+  <div class="align-form-by-two-index">
+    <% @projects.each do |project| %>
+      <%= link_to project_path(project) do  %>
+      <%= render "shared/card_project", project: project %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
