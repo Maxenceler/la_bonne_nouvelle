@@ -1,0 +1,39 @@
+.banner-lbn {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  background-color: #F2F7FF;
+}
+
+.banner-lbn h1 {
+  margin: 0;
+  color: black;
+  font-weight: 800;
+  font-size: 55px;
+  line-height: 75px;
+  margin: 32px 0px;
+}
+
+.banner-lbn p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.btn-lbn-home {
+  color: white;
+  padding: 14px 24px;
+  border-radius: 4px;
+  background: #8C30F5;
+  transition: background 0.3s ease;
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.btn-lbn-home:hover {
+  text-decoration: none;
+  color: white;
+  background: #9645f1;
+}
