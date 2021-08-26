@@ -41,7 +41,7 @@
 
 
   <h2>Vos projets</h2>
-  <div class="align-form-by-two-index">
+  <div class="align-cards-by-four-index">
     <% @projects.each do |project| %>
       <%= link_to project_path(project) do  %>
       <%= render "shared/card_project", project: project %>
