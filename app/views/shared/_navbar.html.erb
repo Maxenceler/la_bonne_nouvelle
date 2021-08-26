@@ -12,12 +12,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Mes projets", "", class: "dropdown-item" %>
-            <%= link_to "Mon dashboard", "#", class: "dropdown-item" %>
+            <%= link_to "Mon dashboard", "", class: "dropdown-item" %> project_path(project)
+            <%= link_to "Mes autres projets", projects_path, class: "dropdown-item" %>
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
@@ -29,9 +28,7 @@
           <li class="nav-item-lbn mr-3">
             <%= link_to "Etapes", id:"anchor-etapes", class: "nav-link" %>
           </li>
-          <li class="nav-item-lbn mr-5">
-            <%= link_to "Expertise", "#", class: "nav-link" %>
-          </li>
+
             <%= link_to "S'inscrire", new_user_session_path, class: "btn-lbn-p " %>
             <%= link_to "Se connecter", new_user_session_path, class: "btn-lbn-pl " %>
 
