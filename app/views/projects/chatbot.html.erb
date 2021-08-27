@@ -1,36 +1,38 @@
-<% @questions.each do |question| %>
-  <% if question.name == "estimation-approximative" %>
-    <div class="container question-answer" id="<%= question.name %>">
-      <div class="question-group">
-        <div class="question col-8">
-          <%= question.content %>
-        </div>
-      </div>
-
-      <% question.responses.each do |response| %>
-        <div class="answer-group" data-next-question-name="<%= response.next_question_name %>">
-          <div class="answer bg-dark text-white">
-            <%= response.content %>
-          </div>
-          <% end %>
-        </div>
-    </div>
-
-  <% else %>
-  <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
-      <div class="question-group">
-        <div class="question col-8">
-          <%= question.content %>
-        </div>
-      </div>
-
-      <% question.responses.each do |response| %>
-        <div class="answer-group" data-next-question-name="<%= response.next_question_name %>">
-          <div class="answer bg-dark text-white">
-            <%= response.content %>
+<div id="big-container-chatbot">
+  <% @questions.each do |question| %>
+    <% if question.name == "estimation-approximative" %>
+      <div class="container question-answer" id="<%= question.name %>">
+        <div class="question-group">
+          <div class="question col-8">
+            <%= question.content %>
           </div>
         </div>
+
+        <% question.responses.each do |response| %>
+          <div class="answer-group" data-next-question-name="<%= response.next_question_name %>">
+            <div class="answer bg-dark text-white">
+              <%= response.content %>
+            </div>
+            <% end %>
+          </div>
+      </div>
+
+    <% else %>
+    <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+        <div class="question-group">
+          <div class="question col-8">
+            <%= question.content %>
+          </div>
+        </div>
+
+        <% question.responses.each do |response| %>
+          <div class="answer-group" data-next-question-name="<%= response.next_question_name %>">
+            <div class="answer bg-dark text-white">
+              <%= response.content %>
+            </div>
+          </div>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
-<% end %>
+  <% end %>
+</div>
