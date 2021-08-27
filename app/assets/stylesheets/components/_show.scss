@@ -69,7 +69,7 @@
 
 .background-progression:before {
     content:"";
-    background-color: #a785f57a;
+    background-color: #73678a46;
     position: absolute;
     height: 425px;
     width: 4000px;
@@ -148,13 +148,21 @@
   object-fit: cover;
 }
 
+
 .card-content-infosaved-show {
-  text-align: center;
+  margin-top: 15px;
 }
 
-.card-content-infosaved-show, .info-title-infosaved-show {
-  margin-top: 15px;
+.info-title-infosaved-show {
+  text-align: center;
   font-weight: bold;
+}
+
+.info-content-infosaved-show {
+  text-align: justify;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .h2-infosaved-show {
@@ -167,7 +175,7 @@
 
 .background-infosaved:before {
     content:"";
-    background-color: #73678a46;
+    background-color: #ece9fd;
     position: absolute;
     height: 500px;
     width: 4000px;
