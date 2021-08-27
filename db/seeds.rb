@@ -66,13 +66,15 @@ N'hésitez pas à en contacter un ou à demander à votre entourage de vous en r
 
 ################################QUESTION3#######################################
 
-question3A = Question.create!(step: step1, content: "Pour vendre votre bien, il y a plusieurs diagnostics à réaliser. Pas de panique ! Ce n’est pas aussi cher que cela en a l’air ! Comptez entre 100€ et 500€ pour l’intégralité du pack.
+question3A = Question.create!(
+  step: step1, name: "questions-diagnostics", next_question_name: "a-jour",
+  content: "Pour vendre votre bien, il y a plusieurs diagnostics à réaliser. Pas de panique ! Ce n’est pas aussi cher que cela en a l’air ! Comptez entre 100€ et 500€ pour l’intégralité du pack.
 
 N’oubliez pas : un mauvais diagnostic n’empêche pas la conclusion d’une vente !
 
 De même, rien ne vous oblige à effectuer des travaux ni à les financer mais, bien sûr, l’acheteur est libre de négocier le prix au regard des diagnostics.
 
-Avez-vous réalisé les diagnostics suivants ? Cochez ceux que vous avez réalisés.", name: "questions-diagnostics")
+Avez-vous réalisé les diagnostics suivants ? Cochez ceux que vous avez réalisés." )
 
 response3A = Response.create!(question: question3A, content: "
 - Le diagnostic amiante + Seulement pour les biens dont le permis de construire date d’avant le 1er juillet 1997. Il est valable 5 ans. Si le diagnostic est positif en grande quantité, le désamiantage peut être imposé par le préfet.
@@ -86,28 +88,28 @@ response3A = Response.create!(question: question3A, content: "
 - Le diagnostic mérules + Il faut le faire pour chaque transaction !
 - L’étude de sol
 - État des nuisances sonores aériennes
-- La surface loi Carrez + Seulement pour les lots en copropriété. Il faut le faire pour chaque transaction !")
+- La surface loi Carrez + Seulement pour les lots en copropriété. Il faut le faire pour chaque transaction !", next_question_name: "a-jour")
 
 
-question3B = Question.create!(step: step1, content: "Parfait, vous avez pris de l’avance. Vous pourrez compléter cette liste à tout moment.", next_question_name: "coproriété")
+question3B = Question.create!(step: step1, content: "Parfait, vous avez pris de l’avance. Vous pourrez compléter cette liste à tout moment.", name: "a-jour",next_question_name: "coproriete")
 
 
 question3C = Question.create!(step: step1, content: "Parfait, vous êtes à jour. Déposez les documents sur votre espace projet 👇  Nous allons en avoir besoin pour la création de l’annonce.")
 
 
-question3D = Question.create!(step: step1, content: "Voici quelques diagnostiqueurs proches de chez vous. N'hésitez pas à rappeler ceux qui ont déjà travaillé sur votre bien.", name: "choix diagnostiqueurs", next_question_name: "coproriété")
+question3D = Question.create!(step: step1, content: "Voici quelques diagnostiqueurs proches de chez vous. N'hésitez pas à rappeler ceux qui ont déjà travaillé sur votre bien.", name: "choix diagnostiqueurs", next_question_name: "coproriete")
 
 
 ################################QUESTION4#######################################
 
-question4A = Question.create!(step: step1, content: "Êtes vous en copropriété ?", name: "coproriété")
+question4A = Question.create!(step: step1, content: "Êtes vous en copropriété ?", name: "coproriete")
 
 
-response4A = Response.new(content: "Oui", next_question_name: "documents copropriété")
+response4A = Response.new(content: "Oui", next_question_name: "documents-copropriete")
 response4A.question = question4A
 response4A.save!
 
-response4B = Response.new(content: "Non", next_question_name: "estimation précise")
+response4B = Response.new(content: "Non", next_question_name: "estimation-precise")
 response4B.question = question4A
 response4B.save!
 
@@ -120,7 +122,7 @@ L’acheteur pourrait vous demander des documents complémentaires. Bien que vou
   - L’état des finances du syndicat des copropriétaires
 
  👏  Vous disposez désormais d’un notaire et avez réalisé les diagnostics obligatoires.
- Il est temps de créer votre annonce ! Pour cela nous avons de superbes conseils pour garantir l’afflux de visiteurs !", name: "documents copropriété", next_question_name: "estimation précise")
+ Il est temps de créer votre annonce ! Pour cela nous avons de superbes conseils pour garantir l’afflux de visiteurs !", name: "documents-copropriete", next_question_name: "estimation-precise")
 
 
 question4C = Question.create!(step: step1, content: "Okay")
@@ -128,21 +130,21 @@ question4C = Question.create!(step: step1, content: "Okay")
 
 ################################QUESTION5#######################################
 
-question5A = Question.create!(step: step2, content: "Souhaitez-vous une estimation plus précise de votre bien ?", name: "estimation précise")
+question5A = Question.create!(step: step2, content: "Souhaitez-vous une estimation plus précise de votre bien ?", name: "estimation-precise")
 
 
-response5A = Response.new(content: "Oui s'il-te-plait", next_question_name: "estimation de votre maison")
+response5A = Response.new(content: "Oui s'il-te-plait", next_question_name: "estimation-votre-maison")
 response5A.question = question5A
 response5A.save!
 
-response5B = Response.new(content: "Non merci", next_question_name: "frais de notaire")
+response5B = Response.new(content: "Non merci", next_question_name: "frais-notaire")
 response5B.question = question5A
 response5B.save!
 
-question5B = Question.create!(step: step2, content: "J’estime que votre bien peut être vendu entre %s € et %s €", name: "estimation de votre maison")
+question5B = Question.create!(step: step2, content: "J’estime que votre bien peut être vendu entre %s € et %s €", name: "estimation-votre-maison")
 
 question5C = Question.create!(step: step2, content: "Très bien, mais n’oubliez pas de faire appel à plusieurs professionnels pour comparer les estimations effectuées.
-Cela dit, attention à ne jamais signer de contrat d’exclusivité avec une agence !", next_question_name: "frais de notaire")
+Cela dit, attention à ne jamais signer de contrat d’exclusivité avec une agence !", next_question_name: "frais-notaire")
 
 
 ################################QUESTION6#######################################
@@ -153,12 +155,12 @@ Les frais de notaire sont acquittés par l’acheteur et comprennent les frais e
 
 Pour donner un ordre d’idée, ces frais sont compris entre 2% et 3 % du prix de vente pour un bien neuf et peuvent aller jusqu’à 8 % du prix de vente pour un bien ancien.
 
-Utile à savoir, non ?", name: "frais de notaire", next_question_name: "création annonce")
+Utile à savoir, non ?", name: "frais de notaire", next_question_name: "creation-annonce")
 
 
 ################################QUESTION7#######################################
 
-question7A = Question.create!(step: step3, content: "Nous allons désormais pouvoir créer l’annonce de vente de votre bien.", name: "création annonce")
+question7A = Question.create!(step: step3, content: "Nous allons désormais pouvoir créer l’annonce de vente de votre bien.", name: "creation-annonce")
 
 
 question7B = Question.create!(step: step3, content: "Ça y est, votre annonce est créée ! Vous pouvez la visualiser à tout instant sur votre espace personnel.")
