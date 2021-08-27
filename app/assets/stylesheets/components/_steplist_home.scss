@@ -50,3 +50,21 @@
 .p-step-content-hp {
   font-size: 15px;
 }
+
+#btn-commencer-hp {
+  border-radius: 5px;
+}
+
+.background-hp {
+  position: relative;
+}
+
+.background-hp:before {
+    content:"";
+    background-color: #F2F7FF;
+    position: absolute;
+    height: 900px;
+    width: 4000px;
+    left: -2000px;
+    z-index: -1;
+}
