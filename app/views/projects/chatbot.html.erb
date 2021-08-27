@@ -6,6 +6,7 @@
           <%= question.content %>
         </div>
       </div>
+
       <% question.responses.each do |response| %>
         <div class="answer-group" data-next-question-name="<%= response.next_question_name %>">
           <div class="answer bg-dark text-white">
@@ -14,13 +15,15 @@
           <% end %>
         </div>
     </div>
+
   <% else %>
-    <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+  <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
       <div class="question-group">
         <div class="question col-8">
           <%= question.content %>
         </div>
       </div>
+
       <% question.responses.each do |response| %>
         <div class="answer-group" data-next-question-name="<%= response.next_question_name %>">
           <div class="answer bg-dark text-white">
@@ -28,6 +31,6 @@
           </div>
         </div>
     <% end %>
+  <% end %>
   </div>
-<% end %>
 <% end %>
