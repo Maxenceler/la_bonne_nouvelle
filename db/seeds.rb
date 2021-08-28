@@ -31,8 +31,10 @@ step3 = Step.create(number: 3, title: "Trouver un acheteur")
 step4 = Step.create(number: 4, title: "Finalisation de la vente")
 
 ################################QUESTION1#######################################
-
-question1A = Question.create!(step: step1, content: "Souhaitez-vous connaître les prix des biens près de chez vous ?", name: "estimation-approximative")
+file = URI.open("https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c21hbGwlMjBob3VzZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
+question1A = Question.new(step: step1, content: "Souhaitez-vous connaître les prix des biens près de chez vous ?", name: "estimation-approximative")
+question1A.photo.attach(io: file, filename: 'img', content_type: 'image')
+question1A.save!
 
 response1A = Response.create!(question: question1A, content: "Absolument !", next_question_name: "partage-estimation")
 
@@ -47,8 +49,10 @@ question1C = Question.create!(step: step1, content: "Très bien", name: "très b
 
 
 ################################QUESTION2#######################################
+file = URI.open("https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGF3eWVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 question2A = Question.new(step: step1, content: "Le choix du notaire est essentiel dans la vente de votre bien ! En avez-vous déjà un ?", name: "choix-notaire")
-question2A.save
+question2A.photo.attach(io: file, filename: 'img', content_type: 'image')
+question2A.save!
 
 
 response2A = Response.create!(question: question2A, content: "Oui, j'en ai déjà un", next_question_name: "parfait-notaire")
@@ -65,8 +69,8 @@ N'hésitez pas à en contacter un ou à demander à votre entourage de vous en r
 
 
 ################################QUESTION3#######################################
-
-question3A = Question.create!(
+file = URI.open("https://images.unsplash.com/photo-1618090584176-7132b9911657?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWNpdHklMjB3b3JrZXIlMjBob3VzZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
+question3A = Question.new(
   step: step1, name: "questions-diagnostics", next_question_name: "a-jour",
   content: "Pour vendre votre bien, il y a plusieurs diagnostics à réaliser. Pas de panique ! Ce n’est pas aussi cher que cela en a l’air ! Comptez entre 100€ et 500€ pour l’intégralité du pack.
 
@@ -75,6 +79,8 @@ N’oubliez pas : un mauvais diagnostic n’empêche pas la conclusion d’une v
 De même, rien ne vous oblige à effectuer des travaux ni à les financer mais, bien sûr, l’acheteur est libre de négocier le prix au regard des diagnostics.
 
 Avez-vous réalisé les diagnostics suivants ? Cochez ceux que vous avez réalisés." )
+question3A.photo.attach(io: file, filename: 'img', content_type: 'image')
+question3A.save!
 
 response3A = Response.create!(question: question3A, content: "
 - Le diagnostic amiante + Seulement pour les biens dont le permis de construire date d’avant le 1er juillet 1997. Il est valable 5 ans. Si le diagnostic est positif en grande quantité, le désamiantage peut être imposé par le préfet.
@@ -102,8 +108,10 @@ question3D = Question.create!(step: step1, content: "Voici quelques diagnostique
 
 ################################QUESTION4#######################################
 
-question4A = Question.create!(step: step1, content: "Êtes vous en copropriété ?", name: "coproriete")
-
+file = URI.open("https://images.unsplash.com/photo-1475698066764-3dc9200f1c93?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2luZyUyMGVzdGF0ZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
+question4A = Question.new(step: step1, content: "Êtes vous en copropriété ?", name: "coproriete")
+question4A.photo.attach(io: file, filename: 'img', content_type: 'image')
+question4A.save!
 
 response4A = Response.new(content: "Oui", next_question_name: "documents-copropriete")
 response4A.question = question4A
@@ -129,9 +137,10 @@ question4C = Question.create!(step: step1, content: "Okay")
 
 
 ################################QUESTION5#######################################
-
-question5A = Question.create!(step: step2, content: "Souhaitez-vous une estimation plus précise de votre bien ?", name: "estimation-precise")
-
+file = URI.open("https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG91c2UlMjBwcmljZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
+question5A = Question.new(step: step2, content: "Souhaitez-vous une estimation plus précise de votre bien ?", name: "estimation-precise")
+question5A.photo.attach(io: file, filename: 'img', content_type: 'image')
+question5A.save!
 
 response5A = Response.new(content: "Oui s'il-te-plait", next_question_name: "estimation-votre-maison")
 response5A.question = question5A
@@ -148,14 +157,16 @@ Cela dit, attention à ne jamais signer de contrat d’exclusivité avec une age
 
 
 ################################QUESTION6#######################################
-
-question6A = Question.create!(step: step2, content: "Et si nous parlions un peu des frais de notaire :
+file = URI.open("https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udHJhY3QlMjBmZWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60")
+question6A = Question.new(step: step2, content: "Et si nous parlions un peu des frais de notaire :
 
 Les frais de notaire sont acquittés par l’acheteur et comprennent les frais et débours (l’ensemble des sommes acquittées par le Notaire pour le compte du client) et les émoluments (la rémunération du notaire).
 
 Pour donner un ordre d’idée, ces frais sont compris entre 2% et 3 % du prix de vente pour un bien neuf et peuvent aller jusqu’à 8 % du prix de vente pour un bien ancien.
 
 Utile à savoir, non ?", name: "frais de notaire", next_question_name: "creation-annonce")
+question6A.photo.attach(io: file, filename: 'img', content_type: 'image')
+question6A.save!
 
 
 ################################QUESTION7#######################################
