@@ -47,8 +47,8 @@ question1C = Question.create!(step: step1, content: "Très bien", name: "très b
 
 
 ################################QUESTION2#######################################
-
-question2A = Question.create!(step: step1, content: "Le choix du notaire est essentiel dans la vente de votre bien ! En avez-vous déjà un ?", name: "choix-notaire")
+question2A = Question.new(step: step1, content: "Le choix du notaire est essentiel dans la vente de votre bien ! En avez-vous déjà un ?", name: "choix-notaire")
+question2A.save
 
 
 response2A = Response.create!(question: question2A, content: "Oui, j'en ai déjà un", next_question_name: "parfait-notaire")

@@ -17,6 +17,7 @@ const handleNewAnswer = (event) => {
    const nextQuestion = document.querySelector(`#${responseId}`)
    console.log(nextQuestion)
   nextQuestion.classList.remove("d-none");
+  nextQuestion.scrollIntoView()
   displayNextQuestion(nextQuestion)
 
 };
