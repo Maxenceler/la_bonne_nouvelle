@@ -170,9 +170,10 @@ question6A.save!
 
 
 ################################QUESTION7#######################################
-
+file = URI.open("https://d1csarkz8obe9u.cloudfront.net/posterpreviews/real-estate-open-house-ad-design-template-f21d6387c338473e684f00044e29d515_screen.jpg?ts=1567075438")
 question7A = Question.create!(step: step3, content: "Nous allons désormais pouvoir créer l’annonce de vente de votre bien.", name: "creation-annonce")
-
+question7A.photo.attach(io: file, filename: 'img', content_type: 'image')
+question7A.save!
 
 question7B = Question.create!(step: step3, content: "Ça y est, votre annonce est créée ! Vous pouvez la visualiser à tout instant sur votre espace personnel.")
 
