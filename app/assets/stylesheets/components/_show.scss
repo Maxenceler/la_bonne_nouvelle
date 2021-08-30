@@ -178,11 +178,20 @@
   margin-left: -15px;
 }
 
+.title-step-carousel {
+}
+
+.carousel-caption {
+  color: black;
+  padding-left: 100px;
+  margin-left: 90px;
+  text-align: justify;
+}
 
 //////////////////////////RECAPITULATIF////////////////////////////////////////
 
 .recapitulatif-show {
-  margin-top: 100px;
+  margin-top: 60px;
   margin-bottom: -30px;
 }
 
@@ -209,9 +218,6 @@
 .card-recapitulatif-show:hover {
   transform: scale(1.1);
   transition: 0.3s;
-}
-
-.title-card-recapitulatif-show {
 }
 
 .content-card-recapitulatif-show {
@@ -251,7 +257,6 @@
   width: 100%;
   object-fit: cover;
 }
-
 
 .card-content-infosaved-show {
   margin-top: 15px;

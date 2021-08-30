@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @steps = Step.all
+    raise
   end
 
   def edit
