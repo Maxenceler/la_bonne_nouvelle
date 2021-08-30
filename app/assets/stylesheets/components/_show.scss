@@ -28,7 +28,7 @@
 
 .h2-progression-show {
   padding-top: 45px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
 }
 
 .stepper-wrapper-show {
@@ -54,7 +54,7 @@
   content: "";
   border-bottom: 2px solid #ccc;
   width: 100%;
-  top: 20px;
+  top: 50px;
   left: -50%;
   z-index: 2;
 }
@@ -64,7 +64,7 @@
   content: "";
   border-bottom: 2px solid #ccc;
   width: 100%;
-  top: 20px;
+  top: 50px;
   left: 50%;
   z-index: 2;
 }
@@ -75,11 +75,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: #ccc;
   margin-bottom: 6px;
+}
+
+.step-counter-show, .step-counter-show.active, .step-counter-show.completed, .step-counter-show:hover {
+  color: white;
+  text-decoration: none;
+  width: 100px;
+  height: 100px;
+  font-size: 40px;
+  transition: 0.3s;
 }
 
 .stepper-item-show.active {
@@ -87,15 +96,21 @@
 }
 
 .stepper-item-show.completed .step-counter-show {
-  background-color: #4bb543;
+  background-color: #8C30F5;
+}
+
+.step-counter-show:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .stepper-item-show.completed::after {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #4bb543;
+  border-bottom: 2px solid #8C30F5;
   width: 100%;
-  top: 20px;
+  top: 50px;
   left: 50%;
   z-index: 3;
 }
@@ -105,24 +120,6 @@
 }
 .stepper-item-show:last-child::after {
   content: none;
-}
-
-///////////////////FAITMAISON//////////
-
-.img-progression-show {
-  height: 115px;
-  width: 115px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  margin-bottom: 20px;
-  transition: 0.3s;
-}
-
-.img-progression-show:hover {
-  transform: scale(1.15);
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .step-name-show {
@@ -146,17 +143,47 @@
     content:"";
     background-color: #73678a46;
     position: absolute;
-    height: 425px;
+    height: 500px;
     width: 4000px;
     left: -2000px;
     z-index: -1;
 }
 
+.button-acceder-chatbot-show {
+  display: flex;
+  justify-content: center;
+}
+
+////////////////////////////////CAROUSEL////////////////////////////////////////
+
+#carouselExampleIndicators {
+  margin-top: 120px;
+}
+
+.carousel-control-prev, .carousel-control-next, .carousel-indicators {
+  filter: invert(100%);
+}
+
+.carousel-inner {
+  background-color: #F1E4FF;
+  border-radius: 10px;
+}
+
+.d-block {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px 0 0 10px;
+  margin-left: -15px;
+}
+
+
 //////////////////////////RECAPITULATIF////////////////////////////////////////
 
 .recapitulatif-show {
   margin-top: 100px;
-  margin-bottom: 50px;
+  margin-bottom: -30px;
 }
 
 .cards-row1-recapitulatif-show, .cards-row2-recapitulatif-show {
@@ -171,7 +198,7 @@
 .card-recapitulatif-show {
   overflow: scroll;
   text-align: center;
-  background-color: #F1E4FF;
+  background-color: #fbfafc;
   padding: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 250px;
@@ -182,8 +209,6 @@
 .card-recapitulatif-show:hover {
   transform: scale(1.1);
   transition: 0.3s;
-  background-color: #8C30F5;
-  color: white;
 }
 
 .title-card-recapitulatif-show {
@@ -192,6 +217,7 @@
 .content-card-recapitulatif-show {
   font-weight: bold;
   font-size: 20px;
+  color: #8C30F5;
 }
 
 ///////////////////////////////INFOSSAVED///////////////////////////////////////
