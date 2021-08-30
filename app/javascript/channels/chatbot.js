@@ -11,13 +11,11 @@ const displayNextQuestion = (currentQuestion) => {
 }
 
 const saveAnswers = (responseId, projectId) => {
-  console.log("responseId:", responseId)
-  console.log("projectId:", projectId)
+
   const url = "/response_projects"
   const body = { responseId: responseId,
                 projectId: projectId }
-  console.log(url)
-  console.log(body)
+
 
   fetchWithToken(url, {
     method: "POST",
@@ -33,10 +31,12 @@ const saveAnswers = (responseId, projectId) => {
 
 const handleNewAnswer = (event) => {
    const nextQuestionName = event.currentTarget.dataset.nextQuestionName
+   console.log(nextQuestionName)
    const responseId = event.currentTarget.dataset.responseId
    const projectId = event.currentTarget.dataset.projectId
    saveAnswers(responseId, projectId)
    const nextQuestion = document.querySelector(`#${nextQuestionName}`)
+   console.log(nextQuestion)
   nextQuestion.classList.remove("d-none");
   nextQuestion.scrollIntoView()
   displayNextQuestion(nextQuestion)

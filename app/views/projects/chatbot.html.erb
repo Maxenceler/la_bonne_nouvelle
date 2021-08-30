@@ -16,6 +16,36 @@
       </div>
     </div>
 
+
+  <% question = Question.where(name: @response_projects.last.response.next_question_name)[0] %>
+  <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+    <div class="question-group">
+      <div class="question col-8">
+        <%= question.content %>
+      </div>
+    </div>
+
+    <%#  Recursive? A gérer à la main si 3 questions d'affilée %>
+
+    <% if question.next_question_name? %>
+      <% next_question = Question.where(name: question.next_question_name)[0] %>
+      <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= next_question.next_question_name %>">
+        <div class="question-group">
+          <div class="question col-8">
+            <%= next_question.content %>
+          </div>
+        </div>
+
+      <% next_question.responses.each do |response| %>
+            <div class="answer-group">
+              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                <%= response.content %>
+              </div>
+              <% end %>
+            </div>
+      </div>
+
+    <%#  questions.each + question.responses.each ne fonctionnent pas %>
   <% @questions.each do |question| %>
     <div class="container question-answer d-none" id="<%= question.name %>">
       <div class="question-group">
@@ -24,18 +54,29 @@
         </div>
       </div>
 
-
     <% question.responses.each do |response| %>
-      <div class="answer-package">
+      <div class="answer-group">
         <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
           <%= response.content %>
         </div>
       <% end %>
     </div>
-    <% end %>
+  <% end %>
   </div>
+  <% else %>
 
-</div>
+   <% question.responses.each do |response| %>
+            <div class="answer-group">
+              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                <%= response.content %>
+              </div>
+              <% end %>
+            </div>
+        </div>
+
+
+
+  <% end %>
 
 
 <% else %>
