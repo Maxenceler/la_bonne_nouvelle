@@ -1,16 +1,19 @@
 .banner-lbn {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 150px 0 170px;
   background-color: #F2F7FF;
+  background-image: url("HP_illu.png");
+  background-repeat: no-repeat;
+  background-size: 700px;
+  background-position: bottom -15px right 25px;
 }
 
 .banner-lbn h1 {
-  margin: 0;
   color: black;
   font-weight: 800;
   font-size: 55px;
-  line-height: 75px;
+  line-height: 65px;
   margin: 32px 0px;
 }
 
