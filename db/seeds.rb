@@ -65,28 +65,18 @@ N'hésitez pas à en contacter un ou à demander à votre entourage de vous en r
 
 
 ################################QUESTION3#######################################
-<<<<<<< HEAD
 file = URI.open("https://images.unsplash.com/photo-1618090584176-7132b9911657?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWNpdHklMjB3b3JrZXIlMjBob3VzZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 question3A = Question.new(
   step: step1, name: "questions-diagnostics", next_question_name: "a-jour",
-=======
-
-question3A = Question.create!(
-  step: step1, name: "questions-diagnostics", next_question_name: "choix diagnostiqueurs",
->>>>>>> master
   content: "Pour vendre votre bien, il y a plusieurs diagnostics à réaliser. Pas de panique ! Ce n’est pas aussi cher que cela en a l’air ! Comptez entre 100€ et 500€ pour l’intégralité du pack.
 
 N’oubliez pas : un mauvais diagnostic n’empêche pas la conclusion d’une vente !
 
 De même, rien ne vous oblige à effectuer des travaux ni à les financer mais, bien sûr, l’acheteur est libre de négocier le prix au regard des diagnostics.
 
-<<<<<<< HEAD
 Avez-vous réalisé les diagnostics suivants ? Cochez ceux que vous avez réalisés." )
 question3A.photo.attach(io: file, filename: 'img', content_type: 'image')
 question3A.save!
-=======
-Avez-vous réalisé les diagnostics suivants ? Cochez ceux que vous avez réalisés.")
->>>>>>> master
 
 response3A = Response.create!(question: question3A, content: "
 - Le diagnostic amiante
