@@ -1,0 +1,10 @@
+  <div class="card-trip">
+    <% if question.photo.attached? %>
+    <%= cl_image_tag question.photo.key, crop: :fill, class:"card-picture" %>
+    <% end %>
+    <div class="card-trip-infos">
+      <div>
+        <p><%= question.content %></p>
+      </div>
+    </div>
+  </div>
