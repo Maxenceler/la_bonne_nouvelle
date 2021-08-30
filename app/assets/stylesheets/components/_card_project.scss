@@ -1,3 +1,6 @@
+a:hover {
+  text-decoration: none !important;
+}
 
 .card-trip {
   overflow: hidden;
@@ -10,52 +13,53 @@
 
 .card-trip:hover {
   transform: scale(1.04);
+  text-decoration: inherit;
+  text-decoration: none;
+  color: black;
 }
 
-.card-trip > img {
+.card-trip img{
   height: 200px;
   width: 100%;
   object-fit: cover;
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
   text-decoration: none;
+  color: black;
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 15px;
   opacity: .7;
-  margin: 0;
+  margin-top: 6px;
   text-decoration: none;
+  color: black;
+  margin-bottom: auto;
 }
-
 
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+  text-decoration: none;
+  color: black;
 }
-
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
 
 a {
     text-decoration: inherit;
+    color: black;
 }
 
 
 .card-text-index {
   width: 600px;
+  text-decoration: inherit;
+  color: black;
 }
 
 .purple-btn {
@@ -88,6 +92,7 @@ a {
 #index-title {
   font-weight: bold;
   font-size: 40px;
+  margin-bottom: 35px;
 }
 
 .blue-button-form {
@@ -113,4 +118,24 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 24px;
+}
+
+.trash-fa {
+  color: black;
+  text-decoration: none;
+  font-size: 10px;
+  margin-top: 6px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.edit-fa {
+  font-size: 10px;
+  margin-top: 6px;
+  color: black;
+  text-decoration: none;
+&:hover {
+    text-decoration: none;
+  }
 }
