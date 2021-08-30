@@ -14,33 +14,18 @@
 
       <div class="stepper-wrapper-show">
 
-        <div class="stepper-item-show <%= true ? "not completed": "" %>">
-          <div class="step-counter-show">1</div>
-          <div class="step-name-show">ÉTAPE 1</div>
-          <div class="step-content-show">Se Préparer à la vente</div>
+        <% @steps.each do |step| %>
+          <div class="stepper-item-show <%= step.status !="Not completed" ? "completed": "" %>">
+          <div class="step-counter-show"><%= step.number %></div>
+          <div class="step-name-show">ÉTAPE <%= step.number %></div>
+          <div class="step-content-show"><%= step.title %></div>
         </div>
+        <% end %>
 
-        <div class="stepper-item-show">
-          <div class="step-counter-show">2</div>
-          <div class="step-name-show">ÉTAPE 2</div>
-          <div class="step-content-show">Les Questions Financières</div>
-        </div>
-
-        <div class="stepper-item-show">
-          <div class="step-counter-show">3</div>
-          <div class="step-name-show">ÉTAPE 3</div>
-          <div class="step-content-show">Trouver un Acheteur</div>
-        </div>
-
-        <div class="stepper-item-show">
-          <div class="step-counter-show">4</div>
-          <div class="step-name-show">ÉTAPE 4</div>
-          <div class="step-content-show">Finalisation de la Vente</div>
-        </div>
       </div>
 
       <div class="button-acceder-chatbot-show">
-        <%= link_to chatbot_project_path, class: "btn btn-outline-secondary btn-lg", style: "text-decoration: none; border-radius: 10px; margin-top: 20px;" do %>Accéder à votre chatbot<% end %>
+        <%= link_to chatbot_project_path, class: "btn btn-outline-dark btn-lg", style: "text-decoration: none; border-radius: 10px; margin-top: 20px;" do %>Accéder à votre chatbot<% end %>
       </div>
 
     </div>

@@ -8,7 +8,6 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @steps = Step.all
-    raise
   end
 
   def edit
@@ -24,11 +23,13 @@ class ProjectsController < ApplicationController
     end
   end
 
-
   def create
     @project = Project.new(params_project)
     @project.user = current_user
     if @project.save
+      # Step.all.each do |step|
+      #   StepStatus.create (step: step, project: @project)
+      # end
       redirect_to project_path(@project)
     else
       render :index
