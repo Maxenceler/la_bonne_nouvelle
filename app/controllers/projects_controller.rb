@@ -22,7 +22,6 @@ class ProjectsController < ApplicationController
     end
   end
 
-
   def create
     @project = Project.new(params_project)
     @project.user = current_user
@@ -31,6 +30,12 @@ class ProjectsController < ApplicationController
     else
       render :index
     end
+  end
+
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to projects_path
   end
 
   def chatbot
