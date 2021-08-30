@@ -2,7 +2,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Response.destroy_all
+p "all responses destroyed"
 Question.destroy_all
+p "all questions destroyed"
+Step.destroy_all
+p "all steps destroyed"
 Project.destroy_all
 User.destroy_all
 
@@ -31,6 +35,7 @@ step3 = Step.create(number: 3, title: "Trouver un acheteur")
 step4 = Step.create(number: 4, title: "Finalisation de la vente")
 
 ################################QUESTION1#######################################
+
 file = URI.open("https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c21hbGwlMjBob3VzZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 question1A = Question.new(step: step1, content: "Souhaitez-vous connaître les prix des biens près de chez vous ?", name: "estimation-approximative")
 question1A.photo.attach(io: file, filename: 'img', content_type: 'image')
@@ -48,6 +53,7 @@ question1C = Question.create!(step: step1, content: "Très bien", name: "très b
 
 
 ################################QUESTION2#######################################
+
 file = URI.open("https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGF3eWVyfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 question2A = Question.new(step: step1, content: "Le choix du notaire est essentiel dans la vente de votre bien ! En avez-vous déjà un ?", name: "choix-notaire")
 question2A.photo.attach(io: file, filename: 'img', content_type: 'image')
@@ -65,6 +71,7 @@ N'hésitez pas à en contacter un ou à demander à votre entourage de vous en r
 
 
 ################################QUESTION3#######################################
+
 file = URI.open("https://images.unsplash.com/photo-1618090584176-7132b9911657?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWNpdHklMjB3b3JrZXIlMjBob3VzZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 question3A = Question.new(
   step: step1, name: "questions-diagnostics", next_question_name: "a-jour",
