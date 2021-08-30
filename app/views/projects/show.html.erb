@@ -7,52 +7,45 @@
 
                                   <%# PROGRESSION %>
 
-  <ul class="progressbar">
-    <li class="active">ÉTAPE 1</li>
-    <li>ÉTAPE 2</li>
-    <li>ÉTAPE 3</li>
-    <li>ÉTAPE 4</li>
-  </ul>
-
   <div class="background-progression">
     <div class="progression-show">
 
       <h2 class="h2-progression-show">- Votre Progression -</h2>
 
-      <div class="schema-progression-show">
+        <div class="stepper-wrapper-show">
 
-        <div class="steps-progression-show">
-          <%= link_to chatbot_project_path do %>
-            <%= image_tag "https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80", class: "img-progression-show" %>
-          <% end %>
-          <p class="step-progression-show">ÉTAPE 1</p>
-          <p class="stepcontent-progression-show">Se Préparer à la vente</p>
-        </div>
-
-        <div class="steps-progression-show">
-          <%= link_to chatbot_project_path do %>
-            <%= image_tag "https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80", class: "img-progression-show"%>
-          <% end %>
-          <p class="step-progression-show">ÉTAPE 2</p>
-          <p class="stepcontent-progression-show">Les Questions Financières</p>
-        </div>
-
-        <div class="steps-progression-show">
-          <%= link_to chatbot_project_path do %>
-            <%= image_tag "https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80", class: "img-progression-show"%>
-          <% end %>
-          <p class="step-progression-show">ÉTAPE 3</p>
-          <p class="stepcontent-progression-show">Trouver un Acheteur</p>
-        </div>
-
-        <div class="steps-progression-show">
-          <%= link_to chatbot_project_path do %>
-            <%= image_tag "https://images.unsplash.com/photo-1584985429926-08867327d3a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80", class: "img-progression-show"%>
-          <% end %>
-          <p class="step-progression-show">ÉTAPE 4</p>
-          <p class="stepcontent-progression-show">Finalisation de la Vente</p>
-        </div>
+    <div class="stepper-item-show completed">
+      <div class="step-counter-show">
+        <%= link_to chatbot_project_path do %>1<% end %>
       </div>
+      <div class="step-name-show">ÉTAPE 1</div>
+      <div class="step-content-show">Se Préparer à la vente</div>
+    </div>
+
+    <div class="stepper-item-show">
+      <div class="step-counter-show">
+        <%= link_to chatbot_project_path do %>2<% end %>
+      </div>
+      <div class="step-name-show">ÉTAPE 2</div>
+      <div class="step-content-show">Les Questions Financières</div>
+    </div>
+
+    <div class="stepper-item-show">
+      <div class="step-counter-show">
+        <%= link_to chatbot_project_path do %>3<% end %>
+      </div>
+      <div class="step-name-show">ÉTAPE 3</div>
+      <div class="step-content-show">Trouver un Acheteur</div>
+    </div>
+
+    <div class="stepper-item-show">
+      <div class="step-counter-show">
+        <%= link_to chatbot_project_path do %>4<% end %>
+      </div>
+      <div class="step-name-show">ÉTAPE 4</div>
+      <div class="step-content-show">Finalisation de la Vente</div>
+    </div>
+    </div>
 
     </div>
 
