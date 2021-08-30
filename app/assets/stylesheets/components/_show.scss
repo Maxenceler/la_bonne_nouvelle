@@ -20,13 +20,24 @@
 
 ///////////////////////////////PROGRESSION//////////////////////////////////////
 
-.stepper-wrapper {
+.h2-progression-show, .h2-recapitulatif-show, .h2-infosaved-show {
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+
+.h2-progression-show {
+  padding-top: 45px;
+  margin-bottom: 100px;
+}
+
+.stepper-wrapper-show {
   margin-top: auto;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.stepper-item {
+.stepper-item-show {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -38,7 +49,7 @@
   }
 }
 
-.stepper-item::before {
+.stepper-item-show::before {
   position: absolute;
   content: "";
   border-bottom: 2px solid #ccc;
@@ -48,7 +59,7 @@
   z-index: 2;
 }
 
-.stepper-item::after {
+.stepper-item-show::after {
   position: absolute;
   content: "";
   border-bottom: 2px solid #ccc;
@@ -58,7 +69,7 @@
   z-index: 2;
 }
 
-.stepper-item .step-counter {
+.stepper-item-show .step-counter-show {
   position: relative;
   z-index: 5;
   display: flex;
@@ -71,15 +82,15 @@
   margin-bottom: 6px;
 }
 
-.stepper-item.active {
+.stepper-item-show.active {
   font-weight: bold;
 }
 
-.stepper-item.completed .step-counter {
+.stepper-item-show.completed .step-counter-show {
   background-color: #4bb543;
 }
 
-.stepper-item.completed::after {
+.stepper-item-show.completed::after {
   position: absolute;
   content: "";
   border-bottom: 2px solid #4bb543;
@@ -89,32 +100,14 @@
   z-index: 3;
 }
 
-.stepper-item:first-child::before {
+.stepper-item-show:first-child::before {
   content: none;
 }
-.stepper-item:last-child::after {
+.stepper-item-show:last-child::after {
   content: none;
 }
 
-
-
-
-
-
-.schema-progression-show {
-  display: flex;
-  justify-content: space-between;
-}
-
-.h2-progression-show, .h2-recapitulatif-show, .h2-infosaved-show {
-  text-align: center;
-  margin-bottom: 50px;
-  font-weight: bold;
-}
-
-.h2-progression-show {
-  padding-top: 45px;
-}
+///////////////////FAITMAISON//////////
 
 .img-progression-show {
   height: 115px;
@@ -132,14 +125,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.step-progression-show {
+.step-name-show {
   text-align: center;
   width: 115px;
   font-weight: bold;
   font-size: 20px;
+  padding-top: 40px;
 }
 
-.stepcontent-progression-show {
+.step-content-show {
   text-align: center;
   width: 115px;
 }
@@ -193,6 +187,9 @@
 }
 
 .title-card-recapitulatif-show {
+}
+
+.content-card-recapitulatif-show {
   font-weight: bold;
   font-size: 20px;
 }
