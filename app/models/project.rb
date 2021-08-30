@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  has_many :response_projects
+  has_many :response_projects, dependent: :destroy
 
   validates :address, presence: true
   validates :project_type, presence: true

@@ -14,6 +14,7 @@ ActiveStorage.start()
 
 import { initChatbot } from "../channels/chatbot"
 
+
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
