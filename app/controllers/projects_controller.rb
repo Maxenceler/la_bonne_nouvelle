@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
      if @project = Project.update(params_project)
-      redirect_to project_path(@project)
+      redirect_to chatbot_project_path(@project)
     else
       render :edit
     end
