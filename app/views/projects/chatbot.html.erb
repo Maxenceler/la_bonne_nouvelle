@@ -1,87 +1,101 @@
 <%# chargement réponses après enregistrement %>
 <% if @response_projects.exists? %>
-  <% @response_projects.each do |response_project| %>
   <div id="big-container-chatbot">
-    <div class="group-container question-answer">
-      <div class="question-group">
-        <div class="question col-8">
-          <%= render "shared/card_chatbot", question: response_project.response.question %>
-        </div>
-      </div>
-
-      <div class="answer-package">
-        <div class="answer bg-dark text-white" data-next-question-name="<%= response_project.response.next_question_name %>" data-response-id="<%= response_project.response.id %>" data-project-id="<%= @project.id %>">
-          <%= response_project.response.content %>
-        </div>
-      <% end %>
-      </div>
-    </div>
-
-
-  <% question = Question.where(name: @response_projects.last.response.next_question_name)[0] %>
-  <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
-    <div class="question-group">
-      <div class="question col-8">
-        <%= question.content %>
-      </div>
-    </div>
-
-    <%#  Recursive? A gérer à la main si 3 questions d'affilée %>
-
-    <% if question.next_question_name %>
-      <% next_question = Question.where(name: question.next_question_name)[0] %>
-      <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= next_question.next_question_name %>">
-        <div class="question-group">
-          <div class="question col-8">
-            <%= next_question.content %>
+    <% @response_projects.each do |response_project| %>
+        <div class="group-container question-answer">
+          <div class="question-group">
+            <div class="question col-8">
+              <%= render "shared/card_chatbot", question: response_project.response.question %>
+            </div>
+          </div>
+​
+          <div class="answer-package">
+            <div class="answer bg-dark text-white" data-next-question-name="<%= response_project.response.next_question_name %>" data-response-id="<%= response_project.response.id %>" data-project-id="<%= @project.id %>">
+              <%= response_project.response.content %>
+            </div>
           </div>
         </div>
-
-      <% next_question.responses.each do |response| %>
-            <div class="answer-group">
-              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
-                <%= response.content %>
-              </div>
-              <% end %>
-            </div>
-      </div>
-
-
-    <%#  questions.each + question.responses.each ne fonctionnent pas %>
-  <% @questions.each do |question| %>
-    <div class="container question-answer d-none" id="<%= question.name %>">
+    <% end %>
+​
+​
+<%# Permet de trouver la question suivant la dernière réponse cliquée %>
+​
+    <% question = Question.where(name: @response_projects.last.response.next_question_name)[0] %>
+    <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
       <div class="question-group">
         <div class="question col-8">
           <%= question.content %>
         </div>
       </div>
-
+    </div>
+    <%#  Si la question est suivie par une autre question (sans réponse entre les 2) %>
+​
+      <% if question.next_question_name %>
+        <% next_question = Question.where(name: question.next_question_name)[0] %>
+        <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= next_question.next_question_name %>">
+          <div class="question-group">
+            <div class="question col-8">
+              <%= next_question.content %>
+            </div>
+          </div>
+​
+          <% next_question.responses.each do |response| %>
+              <div class="answer-group">
+                <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                  <%= response.content %>
+                </div>
+              </div>
+          <% end %>
+        </div>
+​
+    <%#  questions.each + question.responses.each ne fonctionnent pas %>
+​
+  <% @questions.each do |question| %>
+    <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+      <div class="question-group">
+        <div class="question col-8">
+          <%= question.content %>
+        </div>
+      </div>
+​
     <% question.responses.each do |response| %>
       <div class="answer-group">
         <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
           <%= response.content %>
         </div>
+      </div>
       <% end %>
     </div>
+​
   <% end %>
-  </div>
-  <% else %>
-
-   <% question.responses.each do |response| %>
-            <div class="answer-group">
-              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
-                <%= response.content %>
-              </div>
-              <% end %>
-            </div>
+​
+​
+  <%# chargement questions et réponses si la q est suivie par une réponse après chargement  %>
+​
+    <% else %>
+      <% @questions.each do |question| %>
+      <div class="container question-answer d-none" id="<%= question.name %>">
+        <div class="question-group">
+          <div class="question col-8">
+            <%= question.content %>
+          </div>
         </div>
-
-
-
+​
+      <% question.responses.each do |response| %>
+        <div class="answer-group">
+          <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+            <%= response.content %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
   <% end %>
-
-
+</div>
+​
+​
 <%# chargement chatbot si première connexion %>
+​
 <% else %>
   <div id="big-container-chatbot">
   <div class="container question-answer">
@@ -91,7 +105,9 @@
       </div>
     </div>
   </div>
-
+​
+<%# Permet d'afficher la première question car pas de d-none %>
+​
     <% @questions.each do |question| %>
       <% if question.name == "estimation-approximative" %>
         <div class="container question-answer" id="<%= question.name %>">
@@ -100,7 +116,7 @@
               <%= question.content %>
             </div>
           </div>
-
+​
           <% question.responses.each do |response| %>
             <div class="answer-group">
               <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
@@ -109,7 +125,9 @@
               <% end %>
             </div>
         </div>
-
+​
+<%# Charge en d-none toutes les questions et réponses %>
+​
       <% else %>
       <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
           <div class="question-group">
@@ -117,8 +135,8 @@
               <%= render "shared/card_chatbot", question: question %>
             </div>
           </div>
-
-
+​
+​
           <% question.responses.each do |response| %>
             <div class="answer-group" >
               <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
@@ -126,7 +144,7 @@
               </div>
             </div>
         <% end %>
-
+​
       <% end %>
     </div>
     <% end %>
