@@ -35,9 +35,9 @@ const handleNewAnswer = (event) => {
   const projectId = event.currentTarget.dataset.projectId
   saveAnswers(responseId, projectId)
   const nextQuestion = document.querySelector(`#${nextQuestionName}`)
-  console.log(nextQuestion)
   nextQuestion.classList.remove("d-none");
-  console.log(nextQuestion)
+  const nextAnswer = event.currentTarget.nextElementSibling
+  nextAnswer.classList.add("d-none")
   nextQuestion.scrollIntoView()
   displayNextQuestion(nextQuestion)
 
