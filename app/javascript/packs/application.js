@@ -12,7 +12,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import { initChatbot } from "../channels/chatbot"
+import { editForm, initChatbot } from "../channels/chatbot"
 
 
 // ----------------------------------------------------
@@ -27,7 +27,8 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  initChatbot()
+  initChatbot();
+  editForm();
   // Call your functions here, e.g:
   // initSelect2();
 });
