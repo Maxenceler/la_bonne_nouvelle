@@ -49,6 +49,6 @@ class ProjectsController < ApplicationController
   end
 
   def params_project
-    params.require(:project).permit(:address, :project_type, :estimated_price, :garden_size, :living_area, :rooms_number, :building_date, :non_living_area, :bathrooms_number, :bedrooms_number, :title, :buildable, :photos, :main_photo)
+    params.require(:project).permit(:address, :project_type, :estimated_price, :garden_size, :living_area, :rooms_number, :building_date, :non_living_area, :bathrooms_number, :bedrooms_number, :title, :buildable, :latitude, :longitude, :selling_price, :photos, :main_photo)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_122623) do
+ActiveRecord::Schema.define(version: 2021_08_31_141615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_122623) do
     t.integer "living_area"
     t.bigint "user_id", null: false
     t.integer "rooms_number"
-    t.date "building_date"
+    t.string "building_date"
     t.integer "non_living_area"
     t.integer "bedrooms_number"
     t.string "title"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_122623) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "longitude"
     t.float "latitude"
+    t.integer "selling_price"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 

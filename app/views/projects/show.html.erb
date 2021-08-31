@@ -114,7 +114,7 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Estimation du prix</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.estimated_price %></p>
+        <p class="content-card-recapitulatif-show"><%= @project.estimated_price %> €</p>
       </div>
 
       <div class="card-recapitulatif-show">
@@ -130,7 +130,7 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Surface habitable/non-habitable</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.living_area %> / <%= @project.non_living_area %></p>
+        <p class="content-card-recapitulatif-show"><%= @project.living_area %> m2 / <%= @project.non_living_area %> m2</p>
       </div>
 
       <div class="card-recapitulatif-show">
@@ -148,7 +148,7 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Nombre de chambres & SDB</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.bedrooms_number%> / <%= @project.bathrooms_number %></p>
+        <p class="content-card-recapitulatif-show"><%= @project.bedrooms_number%> chambres / <%= @project.bathrooms_number %> SDB</p>
       </div>
 
     </div>
