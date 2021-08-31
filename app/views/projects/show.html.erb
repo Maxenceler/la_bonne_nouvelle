@@ -12,7 +12,7 @@
       <div class="stepper-wrapper-show">
 
         <% @steps.each do |step| %>
-          <div class="stepper-item-show <%= step.status !="Not completed" ? "completed": "" %>">
+          <div class="stepper-item-show <%= step.number < @ongoing_step.number ? "completed" : "Not-completed" %>">
           <div class="step-counter-show"><%= step.number %></div>
           <div class="step-content-show"><%= step.title %></div>
         </div>
@@ -200,6 +200,5 @@
     </div>
 
   </div>
-
 
 <%= render "shared/footer" %>

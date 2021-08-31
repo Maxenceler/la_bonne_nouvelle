@@ -8,6 +8,12 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @steps = Step.all
+    if @project.response_projects.last
+      step_id = Question.where(name:Response.find(@project.response_projects.last.response_id).next_question_name)[0].step_id
+      @ongoing_step = Step.find(step_id)
+    else
+      @ongoing_step = Step.where(number: 1)[0]
+    end
   end
 
   def edit
