@@ -1,0 +1,30 @@
+.card-chatbot {
+  overflow: scroll;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  color: black;
+  width: 350px;
+  height: 300px;
+}
+
+.card-chatbot:hover {
+  transform: scale(1.04);
+}
+
+.card-chatbot > .img-card-chatbot {
+  height: 130px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content-chatbot {
+  margin-top: 15px;
+}
+
+.info-content-chatbot {
+  text-align: justify;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}

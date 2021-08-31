@@ -9,14 +9,11 @@
   <div class="background-progression">
     <div class="progression-show">
 
-      <h2 class="h2-progression-show">- Votre Progression -</h2>
-
       <div class="stepper-wrapper-show">
 
         <% @steps.each do |step| %>
-          <div class="stepper-item-show <%= step.status !="Not completed" ? "completed": "" %>">
+          <div class="stepper-item-show <%= step.number < @ongoing_step.number ? "completed" : "Not-completed" %>">
           <div class="step-counter-show"><%= step.number %></div>
-          <div class="step-name-show">ÉTAPE <%= step.number %></div>
           <div class="step-content-show"><%= step.title %></div>
         </div>
         <% end %>
@@ -117,7 +114,7 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Estimation du prix</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.estimated_price %></p>
+        <p class="content-card-recapitulatif-show"><%= @project.estimated_price %> €</p>
       </div>
 
       <div class="card-recapitulatif-show">
@@ -133,7 +130,7 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Surface habitable/non-habitable</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.living_area %> / <%= @project.non_living_area %></p>
+        <p class="content-card-recapitulatif-show"><%= @project.living_area %> m2 / <%= @project.non_living_area %> m2</p>
       </div>
 
       <div class="card-recapitulatif-show">
@@ -151,7 +148,7 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Nombre de chambres & SDB</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.bedrooms_number%> / <%= @project.bathrooms_number %></p>
+        <p class="content-card-recapitulatif-show"><%= @project.bedrooms_number%> chambres / <%= @project.bathrooms_number %> SDB</p>
       </div>
 
     </div>
@@ -160,7 +157,7 @@
 
                       <%# VOS INFORMATIONS SAUVEGARDEES %>
 
-<div class="background-infosaved">
+  <div class="background-infosaved">
 
     <div class="infosaved-show">
 
@@ -203,6 +200,5 @@
     </div>
 
   </div>
-
 
 <%= render "shared/footer" %>
