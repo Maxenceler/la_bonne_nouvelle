@@ -1,6 +1,7 @@
 .titles-show {
   height: 200px;
   margin-top: 25px;
+  margin-bottom: -25px;
 }
 
 .title-show, .subtitle-show {
@@ -19,6 +20,10 @@
 }
 
 ///////////////////////////////PROGRESSION//////////////////////////////////////
+
+.progression-show {
+  padding-top: 25px;
+}
 
 .h2-progression-show, .h2-recapitulatif-show, .h2-infosaved-show {
   text-align: center;
@@ -122,17 +127,11 @@
   content: none;
 }
 
-.step-name-show {
-  text-align: center;
-  width: 115px;
-  font-weight: bold;
-  font-size: 20px;
-  padding-top: 40px;
-}
-
 .step-content-show {
   text-align: center;
   width: 115px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .background-progression {
@@ -143,7 +142,7 @@
     content:"";
     background-color: #73678a46;
     position: absolute;
-    height: 500px;
+    height: 300px;
     width: 3275px;
     left: -2000px;
     z-index: -1;
@@ -157,7 +156,7 @@
 .button-acceder-chatbot-show {
   text-decoration: none;
   border-radius: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   border-color: #8C30F5;
   color: #8C30F5;
   border: 1px solid;
@@ -176,7 +175,7 @@
 ////////////////////////////////CAROUSEL////////////////////////////////////////
 
 #carouselExampleIndicators {
-  margin-top: 120px;
+  margin-top: 70px;
 }
 
 .carousel-control-prev, .carousel-control-next, .carousel-indicators {

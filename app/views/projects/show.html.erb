@@ -10,14 +10,11 @@
   <div class="background-progression">
     <div class="progression-show">
 
-      <h2 class="h2-progression-show">- Votre Progression -</h2>
-
       <div class="stepper-wrapper-show">
 
         <% @steps.each do |step| %>
           <div class="stepper-item-show <%= step.status !="Not completed" ? "completed": "" %>">
           <div class="step-counter-show"><%= step.number %></div>
-          <div class="step-name-show">ÉTAPE <%= step.number %></div>
           <div class="step-content-show"><%= step.title %></div>
         </div>
         <% end %>
@@ -161,7 +158,7 @@
 
                       <%# VOS INFORMATIONS SAUVEGARDEES %>
 
-<div class="background-infosaved">
+  <div class="background-infosaved">
 
     <div class="infosaved-show">
 
@@ -205,5 +202,7 @@
 
   </div>
 </div>
+
+<%= render "shared/cards_prefaites_chatbot" %>
 
 <%= render "shared/footer" %>
