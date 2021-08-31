@@ -1,9 +1,7 @@
 <div class="container", style="margin-top: 25px;">
   <%= simple_form_for(@project) do |f| %>
       <%= f.input :title, label: false, placeholder: "Titre" %>
-
       <%= f.input :address, label: false, placeholder: "Adresse" %>
-
       <%= f.input :project_type, label: false, default: "Type", collection: ["Appartement", "Maison"] %>
       <%= f.input :building_date, label: "Date de construction", placeholder: "Date de construction" %>
       <div class="align-form-by-two-index">
