@@ -136,14 +136,19 @@
 
 .background-progression {
   position: relative;
+  background-color: #ece9fd;
 }
 
 .background-progression:before {
     content:"";
     background-color: #73678a46;
     position: absolute;
+<<<<<<< HEAD
     height: 300px;
     width: 3275px;
+=======
+    height: 500px;
+>>>>>>> master
     left: -2000px;
     z-index: -1;
 }
@@ -296,13 +301,12 @@
 .background-infosaved {
   background-color: #ece9fd;
   position: relative;
-  height: 500px;
 }
 
-// .background-infosaved:before {
-//     content:"";
-//     position: absolute;
-//     width: 3275px;
-//     left: -2000px;
-//     z-index: -1;
-// }
+.background-infosaved:before {
+    content:"";
+    position: absolute;
+    height: 500px;
+    left: -2000px;
+    z-index: -1;
+}
