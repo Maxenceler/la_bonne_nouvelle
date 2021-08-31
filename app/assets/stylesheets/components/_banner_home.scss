@@ -1,16 +1,19 @@
 .banner-lbn {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 150px 0 170px;
   background-color: #F2F7FF;
+  background-image: url("HP_illu.png");
+  background-repeat: no-repeat;
+  background-size: 700px;
+  background-position: bottom -15px right 25px;
 }
 
 .banner-lbn h1 {
-  margin: 0;
   color: black;
   font-weight: 800;
   font-size: 55px;
-  line-height: 75px;
+  line-height: 65px;
   margin: 32px 0px;
 }
 
@@ -36,4 +39,106 @@
   text-decoration: none;
   color: white;
   background: #9645f1;
+}
+
+.banner-lbn-avis {
+  position: static;
+  width: 1440px;
+  height: 896px;
+  left: 0px;
+  top: 1836px;
+  background: #D5FAFC;
+  flex: none;
+  order: 5;
+  flex-grow: 0;
+  margin: 0px 0px;
+  background-size: cover;
+  background-position: center;
+  padding: 111px 0 170px 149px;
+  background-image: url("double_quote.png");
+  background-repeat: no-repeat;
+  background-size: 130px;
+  background-position: top 30px left 80px;
+}
+
+.banner-lbn-avis h1 {
+font-weight: 900;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 445px;
+height: 232px;
+left: 150px;
+top: 2417px;
+}
+
+.box-avis-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 34px;
+    position: absolute;
+    width: 300px;
+    height: 340px;
+    top: 312px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(41, 41, 42, 0.07);
+    top: 2530px;
+    left: 160px;
+
+}
+
+.box-avis-2 {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 32px;
+
+position: absolute;
+width: 445px;
+height: 268px;
+top: 2428px;
+left: 548px;
+
+background: #FFFFFF;
+
+box-shadow: 0px 10px 20px rgba(41, 41, 42, 0.07);
+border-radius: 8px;
+}
+
+.box-avis-3 {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 32px;
+
+position: absolute;
+width: 350px;
+height: 300px;
+top: 2762px;
+left: 548px;
+
+background: #FFFFFF;
+
+box-shadow: 0px 10px 20px rgba(41, 41, 42, 0.07);
+border-radius: 8px;
+}
+
+.banner-lbn-avis-img {
+position: static;
+width: 16px;
+height: 14px;
+left: 0px;
+top: 0px;
+
+opacity: 0.3;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 0px 16px;
 }
