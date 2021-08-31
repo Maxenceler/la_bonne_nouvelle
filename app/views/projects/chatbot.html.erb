@@ -1,3 +1,4 @@
+<%# chargement réponses après enregistrement %>
 <% if @response_projects.exists? %>
   <% @response_projects.each do |response_project| %>
   <div id="big-container-chatbot">
@@ -27,7 +28,7 @@
 
     <%#  Recursive? A gérer à la main si 3 questions d'affilée %>
 
-    <% if question.next_question_name? %>
+    <% if question.next_question_name %>
       <% next_question = Question.where(name: question.next_question_name)[0] %>
       <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= next_question.next_question_name %>">
         <div class="question-group">
@@ -80,6 +81,7 @@
   <% end %>
 
 
+<%# chargement chatbot si première connexion %>
 <% else %>
   <div id="big-container-chatbot">
   <div class="container question-answer">
@@ -130,4 +132,3 @@
     <% end %>
   </div>
 <% end %>
-

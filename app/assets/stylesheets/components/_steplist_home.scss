@@ -1,6 +1,7 @@
 .steplist-hp {
   margin-top: 45px;
   margin-bottom: 45px;
+  background-color: #F2F7FF;
 }
 
 .p-title-hp {
@@ -62,10 +63,8 @@
 
 .background-hp:before {
     content:"";
-    background-color: #F2F7FF;
     position: absolute;
     height: 900px;
-    width: 4000px;
     left: -2000px;
     z-index: -1;
 }
