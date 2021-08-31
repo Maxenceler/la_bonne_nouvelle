@@ -5,56 +5,93 @@
       <h2 class="subtitle-show">- <%= @project.title %> -</h2>
   </div>
 
-                                  <%# PROGRESSION %>
-
-  <ul class="progressbar">
-    <li class="active">ÉTAPE 1</li>
-    <li>ÉTAPE 2</li>
-    <li>ÉTAPE 3</li>
-    <li>ÉTAPE 4</li>
-  </ul>
+                              <%# PROGRESSION %>
 
   <div class="background-progression">
     <div class="progression-show">
 
       <h2 class="h2-progression-show">- Votre Progression -</h2>
 
-      <div class="schema-progression-show">
+      <div class="stepper-wrapper-show">
 
-        <div class="steps-progression-show">
-          <%= link_to chatbot_project_path do %>
-            <%= image_tag "https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80", class: "img-progression-show" %>
-          <% end %>
-          <p class="step-progression-show">ÉTAPE 1</p>
-          <p class="stepcontent-progression-show">Se Préparer à la vente</p>
+        <% @steps.each do |step| %>
+          <div class="stepper-item-show <%= step.status !="Not completed" ? "completed": "" %>">
+          <div class="step-counter-show"><%= step.number %></div>
+          <div class="step-name-show">ÉTAPE <%= step.number %></div>
+          <div class="step-content-show"><%= step.title %></div>
         </div>
+        <% end %>
 
-        <div class="steps-progression-show">
-          <%= link_to chatbot_project_path do %>
-            <%= image_tag "https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80", class: "img-progression-show"%>
-          <% end %>
-          <p class="step-progression-show">ÉTAPE 2</p>
-          <p class="stepcontent-progression-show">Les Questions Financières</p>
-        </div>
+      </div>
 
-        <div class="steps-progression-show">
-          <%= link_to chatbot_project_path do %>
-            <%= image_tag "https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80", class: "img-progression-show"%>
-          <% end %>
-          <p class="step-progression-show">ÉTAPE 3</p>
-          <p class="stepcontent-progression-show">Trouver un Acheteur</p>
-        </div>
-
-        <div class="steps-progression-show">
-          <%= link_to chatbot_project_path do %>
-            <%= image_tag "https://images.unsplash.com/photo-1584985429926-08867327d3a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80", class: "img-progression-show"%>
-          <% end %>
-          <p class="step-progression-show">ÉTAPE 4</p>
-          <p class="stepcontent-progression-show">Finalisation de la Vente</p>
-        </div>
+      <div class="div-button-acceder-chatbot-show">
+        <%= link_to chatbot_project_path, class: "button-acceder-chatbot-show" do %>Accéder à votre chatbot<% end %>
       </div>
 
     </div>
+
+  </div>
+
+                              <%# CAROUSEL STEPS %>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    </ol>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active" data-pause="hover">
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="First slide">
+      </div>
+      <div class="carousel-caption d-none d-md-block col-md-8 col-sm-8 col-xs-8 d-none d-md-block">
+        <span class="title-step-carousel"><b>ÉTAPE 1 : Se préparer à la vente</b><br><br>Se renseigner sur les démarches à accomplir, les documents administratifs à se procurer et s’entourer de professionnels compétents constituent les premières étapes de notre parcours.<br><br></span>
+      </div>
+      </div>
+
+      <div class="carousel-item">
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1586034679970-cb7b5fc4928a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" alt="Second slide">
+      </div>
+      <div class="carousel-caption d-none d-md-block col-md-8 col-sm-8 col-xs-8">
+       <span class="title-step-carousel"><b>ÉTAPE 2 : Les questions financières</b><br><br>Être capable d’évaluer la valeur de son bien, ainsi que les frais à acquitter qui vont en découler est un enjeu de taille et constitue l’un des actes préparatoires essentiels de la vente.<br><br></span>
+      </div>
+      </div>
+
+      <div class="carousel-item">
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" alt="Third slide">
+      </div>
+      <div class="carousel-caption d-none d-md-block col-md-8 col-sm-8 col-xs-8">
+       <span class="title-step-carousel"><b>ÉTAPE 3 : Trouver un acheteur</b><br><br>Il est temps d’entrer en contact avec de potentiels acheteurs ! Gestion de son temps et des créneaux de visites, tri entre les offres d’achat et négociation avec un futur acheteur: je vous accompagne !<br><br></span>
+      </div>
+      </div>
+
+      <div class="carousel-item">
+      <div class="col-md-4 col-sm-4 col-xs-4">
+        <img class="d-block w-100" src="https://images.unsplash.com/photo-1593884165215-43fdc8b9ad47?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Fourth slide">
+      </div>
+      <div class="carousel-caption d-none d-md-block col-md-8 col-sm-8 col-xs-8">
+       <span class="title-step-carousel"><b>ÉTAPE 4 : Finalisation de la vente</b><br><br>Acheteur trouvé, vente à finaliser ! Revoyons ensemble les termes et conditions du contrat conclu avec votre acheteur avant de terminer par l’acte de signature et la remise des clés par votre notaire.<br><br></span>
+      </div>
+      </div>
+
+    </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
 
   </div>
 
@@ -69,25 +106,25 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Adresse</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show">2 avenue des Saules, Lille</p>
+        <p class="content-card-recapitulatif-show"><%= @project.address %></p>
       </div>
 
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Type de bien</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show">Maison</p>
+        <p class="content-card-recapitulatif-show"><%= @project.project_type %></p>
       </div>
 
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Estimation du prix</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show">450 000 €</p>
+        <p class="content-card-recapitulatif-show"><%= @project.estimated_price %></p>
       </div>
 
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Date de construction</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show">1984</p>
+        <p class="content-card-recapitulatif-show"><%= @project.building_date %></p>
       </div>
 
     </div>
@@ -95,27 +132,27 @@
     <div class="cards-row2-recapitulatif-show">
 
       <div class="card-recapitulatif-show">
-        <p class="title-card-recapitulatif-show">Surface</p>
+        <p class="title-card-recapitulatif-show">Surface habitable/non-habitable</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show">100 m2</p>
+        <p class="content-card-recapitulatif-show"><%= @project.living_area %> / <%= @project.non_living_area %></p>
       </div>
 
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Terrain constructible ?</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show">Non</p>
+        <p class="content-card-recapitulatif-show"><%= @project.buildable %></p>
       </div>
 
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Nombre de pièces</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show">4</p>
+        <p class="content-card-recapitulatif-show"><%= @project.rooms_number %></p>
       </div>
 
       <div class="card-recapitulatif-show">
-        <p class="title-card-recapitulatif-show">Nombre de SDB</p>
+        <p class="title-card-recapitulatif-show">Nombre de chambres & SDB</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show">1</p>
+        <p class="content-card-recapitulatif-show"><%= @project.bedrooms_number%> / <%= @project.bathrooms_number %></p>
       </div>
 
     </div>

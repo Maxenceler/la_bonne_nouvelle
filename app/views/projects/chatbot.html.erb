@@ -45,6 +45,7 @@
             </div>
       </div>
 
+
     <%#  questions.each + question.responses.each ne fonctionnent pas %>
   <% @questions.each do |question| %>
     <div class="container question-answer d-none" id="<%= question.name %>">
@@ -115,6 +116,7 @@
             </div>
           </div>
 
+
           <% question.responses.each do |response| %>
             <div class="answer-group" >
               <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
@@ -128,3 +130,4 @@
     <% end %>
   </div>
 <% end %>
+
