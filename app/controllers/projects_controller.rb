@@ -43,7 +43,9 @@ class ProjectsController < ApplicationController
   end
 
   def chatbot
+    @project = Project.find(params[:id])
     @questions = Question.all
+    @response_projects = ResponseProject.where(project: @project)
   end
 
   def params_project

@@ -1,46 +1,133 @@
-<div id="big-container-chatbot">
-<div class="container question-answer">
-<div class="question-group">
-  <div class="question col-8">
-    <p>Bonjour je suis Violette, je vais t'accompagner dans ton parcours de vente, prêt ? On y va.</p>
-  </div>
-</div>
-</div>
+<% if @response_projects.exists? %>
+  <% @response_projects.each do |response_project| %>
+  <div id="big-container-chatbot">
+    <div class="group-container question-answer">
+      <div class="question-group">
+        <div class="question col-8">
+          <%= render "shared/card_chatbot", question: response_project.response.question %>
+        </div>
+      </div>
 
+      <div class="answer-package">
+        <div class="answer bg-dark text-white" data-next-question-name="<%= response_project.response.next_question_name %>" data-response-id="<%= response_project.response.id %>" data-project-id="<%= @project.id %>">
+          <%= response_project.response.content %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+
+
+  <% question = Question.where(name: @response_projects.last.response.next_question_name)[0] %>
+  <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+    <div class="question-group">
+      <div class="question col-8">
+        <%= question.content %>
+      </div>
+    </div>
+
+    <%#  Recursive? A gérer à la main si 3 questions d'affilée %>
+
+    <% if question.next_question_name? %>
+      <% next_question = Question.where(name: question.next_question_name)[0] %>
+      <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= next_question.next_question_name %>">
+        <div class="question-group">
+          <div class="question col-8">
+            <%= next_question.content %>
+          </div>
+        </div>
+
+      <% next_question.responses.each do |response| %>
+            <div class="answer-group">
+              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                <%= response.content %>
+              </div>
+              <% end %>
+            </div>
+      </div>
+
+
+    <%#  questions.each + question.responses.each ne fonctionnent pas %>
   <% @questions.each do |question| %>
-    <% if question.name == "estimation-approximative" %>
-      <div class="container question-answer" id="<%= question.name %>">
-        <div class="question-group">
-          <div class="question col-8">
-            <%= question.content %>
-          </div>
+    <div class="container question-answer d-none" id="<%= question.name %>">
+      <div class="question-group">
+        <div class="question col-8">
+          <%= question.content %>
         </div>
-
-        <% question.responses.each do |response| %>
-          <div class="answer-group" data-next-question-name="<%= response.next_question_name %>">
-            <div class="answer bg-dark text-white">
-              <%= response.content %>
-            </div>
-            <% end %>
-          </div>
       </div>
 
-    <% else %>
-      <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
-        <div class="question-group">
-          <div class="question col-8">
-            <%= render "shared/card_chatbot", question: question %>
-          </div>
+    <% question.responses.each do |response| %>
+      <div class="answer-group">
+        <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+          <%= response.content %>
         </div>
-
-        <% question.responses.each do |response| %>
-          <div class="answer-group" data-next-question-name="<%= response.next_question_name %>">
-            <div class="answer bg-dark text-white">
-              <%= response.content %>
-            </div>
-          </div>
-        <% end %>
-    <% end %>
-      </div>
+      <% end %>
+    </div>
   <% end %>
-</div>
+  </div>
+  <% else %>
+
+   <% question.responses.each do |response| %>
+            <div class="answer-group">
+              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                <%= response.content %>
+              </div>
+              <% end %>
+            </div>
+        </div>
+
+
+
+  <% end %>
+
+
+<% else %>
+  <div id="big-container-chatbot">
+  <div class="container question-answer">
+    <div class="question-group">
+      <div class="question col-8">
+        <p>Bonjour je suis Violette, je vais t'accompagner dans ton parcours de vente, prêt? On y va.</p>
+      </div>
+    </div>
+  </div>
+
+    <% @questions.each do |question| %>
+      <% if question.name == "estimation-approximative" %>
+        <div class="container question-answer" id="<%= question.name %>">
+          <div class="question-group">
+            <div class="question col-8">
+              <%= question.content %>
+            </div>
+          </div>
+
+          <% question.responses.each do |response| %>
+            <div class="answer-group">
+              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                <%= response.content %>
+              </div>
+              <% end %>
+            </div>
+        </div>
+
+      <% else %>
+      <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+          <div class="question-group">
+            <div class="question col-8">
+              <%= render "shared/card_chatbot", question: question %>
+            </div>
+          </div>
+
+
+          <% question.responses.each do |response| %>
+            <div class="answer-group" >
+              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                <%= response.content %>
+              </div>
+            </div>
+        <% end %>
+
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+<% end %>
+

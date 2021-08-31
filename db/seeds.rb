@@ -9,6 +9,7 @@ Step.destroy_all
 p "all steps destroyed"
 Project.destroy_all
 User.destroy_all
+ResponseProject.destroy_all
 
 user1 = User.create(username: 'Maxence', email: 'maxencelerouge1@gmail.com', password: 'anniversaire')
 user2 = User.create(username: 'Estelle', email: 'estelle.dourthe40@orange.fr', password: 'anniversaire')
@@ -41,15 +42,15 @@ question1A = Question.new(step: step1, content: "Souhaitez-vous connaître les p
 question1A.photo.attach(io: file, filename: 'img', content_type: 'image')
 question1A.save!
 
-response1A = Response.create!(question: question1A, content: "Absolument !", next_question_name: "partage-estimation")
+response1A = Response.create!(question: question1A, content: "Absolument !", next_question_name: "premiere-estimation")
 
-response1B = Response.create!(question: question1A, content: "Non merci", next_question_name: "choix-notaire")
+response1B = Response.create!(question: question1A, content: "Non merci", next_question_name: "tres-bien-estimation")
 
 question1B = Question.create!(step: step1, content: "Dans votre quartier, les prix au mètre carré pour les maisons sont en moyenne de %s.
 D’après mon expérience et les dernières transactions réalisées, votre bien a une valeur comprise entre  %s et %s. Si cela vous intéresse, je vous proposerai d’effectuer une estimation plus précise plus tard !
-N’oubliez pas en passant de particulier à particulier, vous économisez 5 à 6% de frais d’agence. 👏  Foncez !", name: "partage-estimation", next_question_name: "choix-notaire")
+N’oubliez pas en passant de particulier à particulier, vous économisez 5 à 6% de frais d’agence. 👏  Foncez !", name: "premiere-estimation", next_question_name: "choix-notaire")
 
-question1C = Question.create!(step: step1, content: "Très bien", name: "très bien-estimation", next_question_name: "choix-notaire")
+question1C = Question.create!(step: step1, content: "Très bien", name: "tres-bien-estimation", next_question_name: "choix-notaire")
 
 
 ################################QUESTION2#######################################
@@ -71,6 +72,7 @@ N'hésitez pas à en contacter un ou à demander à votre entourage de vous en r
 
 
 ################################QUESTION3#######################################
+
 
 file = URI.open("https://images.unsplash.com/photo-1618090584176-7132b9911657?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWNpdHklMjB3b3JrZXIlMjBob3VzZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
 question3A = Question.new(
@@ -99,7 +101,7 @@ response3A = Response.create!(question: question3A, content: "
 - État des nuisances sonores aériennes
 - La surface loi Carrez", next_question_name: "choix diagnostiqueurs")
 
-# question3B = Question.create!(step: step1, content: "Parfait, vous avez pris de l’avance. Vous pourrez compléter cette liste à tout moment.", name: "a-jour",next_question_name: "estimation-precise")
+ question3B = Question.create!(step: step1, content: "Parfait, vous avez pris de l’avance. Vous pourrez compléter cette liste à tout moment.", name: "a-jour",next_question_name: "estimation-precise")
 
 
 # question3C = Question.create!(step: step1, content: "Déposez les documents sur votre espace projet 👇  Nous allons en avoir besoin pour la création de l’annonce.")
