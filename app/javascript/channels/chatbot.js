@@ -30,38 +30,41 @@ const saveAnswers = (responseId, projectId) => {
 
 
 const handleNewAnswer = (event) => {
-   const nextQuestionName = event.currentTarget.dataset.nextQuestionName
-   const responseId = event.currentTarget.dataset.responseId
-   const projectId = event.currentTarget.dataset.projectId
-   saveAnswers(responseId, projectId)
-   const nextQuestion = document.querySelector(`#${nextQuestionName}`)
+  const nextQuestionName = event.currentTarget.dataset.nextQuestionName
+  const responseId = event.currentTarget.dataset.responseId
+  const projectId = event.currentTarget.dataset.projectId
+  saveAnswers(responseId, projectId)
+  const nextQuestion = document.querySelector(`#${nextQuestionName}`)
+  console.log(nextQuestion)
   nextQuestion.classList.remove("d-none");
+  console.log(nextQuestion)
   nextQuestion.scrollIntoView()
   displayNextQuestion(nextQuestion)
 
 };
 
+
+
+
+
 const initChatbot = () => {
   const responses = document.querySelectorAll(".answer")
   responses.forEach((response)=> {
-  response.addEventListener("click", handleNewAnswer);
+    response.addEventListener("click", handleNewAnswer);
   })
 }
 
+
 const editForm = () => {
-  console.log("editForm")
   const answerAnnounce = document.querySelector("[data-next-question-name='annonce']")
-  console.log(answerAnnounce)
   if (answerAnnounce) {
     answerAnnounce.addEventListener("click", () => {
-      console.log("clicked")
-      console.log(window.location.host)
       const url = `${window.location.protocol}//${window.location.host}/projects/${answerAnnounce.dataset.projectId}/edit`
-      console.log(url)
       window.open(url, '_self')
     })
   }
 }
+
 
 
 export { initChatbot, editForm }
