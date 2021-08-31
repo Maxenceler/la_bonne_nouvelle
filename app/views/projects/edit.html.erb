@@ -2,7 +2,7 @@
   <%= simple_form_for(@project) do |f| %>
       <%= f.input :title, label: false, placeholder: "Titre" %>
 
-      <%= f.input :address, label: false, placeholder: "Adresse", id: "autocomplete", onFocus: "geolocate()", type: "text", class:"form-control" %>
+      <%= f.input :address, label: false, placeholder: "Adresse" %>
 
       <%= f.input :project_type, label: false, default: "Type", collection: ["Appartement", "Maison"] %>
       <%= f.input :building_date, label: "Date de construction", placeholder: "Date de construction" %>
@@ -19,5 +19,4 @@
     <%= f.button :submit, "Créer votre annonce", class: "w-100 blue-button-form", style: "background-color: #8C30F5; border-radius: 10px;" %>
   <% end %>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&libraries=places&callback=initAutocomplete" async defer></script>
 </div>

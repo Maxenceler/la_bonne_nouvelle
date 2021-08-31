@@ -196,9 +196,6 @@
   margin-left: -15px;
 }
 
-.title-step-carousel {
-}
-
 .carousel-caption {
   color: black;
   padding-left: 100px;
@@ -297,15 +294,15 @@
 }
 
 .background-infosaved {
+  background-color: #ece9fd;
   position: relative;
+  height: 500px;
 }
 
-.background-infosaved:before {
-    content:"";
-    background-color: #ece9fd;
-    position: absolute;
-    height: 500px;
-    width: 3275px;
-    left: -2000px;
-    z-index: -1;
-}
+// .background-infosaved:before {
+//     content:"";
+//     position: absolute;
+//     width: 3275px;
+//     left: -2000px;
+//     z-index: -1;
+// }
