@@ -23,6 +23,8 @@
 
 .progression-show {
   padding-top: 25px;
+  height: 300px;
+  background-color: #73678a46;
 }
 
 .h2-progression-show, .h2-recapitulatif-show, .h2-infosaved-show {
@@ -41,6 +43,8 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 .stepper-item-show {
   position: relative;
@@ -48,10 +52,6 @@
   flex-direction: column;
   align-items: center;
   flex: 1;
-
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
 }
 
 .stepper-item-show::before {
@@ -130,27 +130,7 @@
 .step-content-show {
   text-align: center;
   width: 115px;
-  font-weight: bold;
   margin-top: 10px;
-}
-
-.background-progression {
-  position: relative;
-  background-color: #ece9fd;
-}
-
-.background-progression:before {
-    content:"";
-    background-color: #73678a46;
-    position: absolute;
-<<<<<<< HEAD
-    height: 300px;
-    width: 3275px;
-=======
-    height: 500px;
->>>>>>> master
-    left: -2000px;
-    z-index: -1;
 }
 
 .div-button-acceder-chatbot-show {
@@ -175,12 +155,15 @@
   transform: scale(1.08);
   transition: 0.3s;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #e8e4e4;
 }
 
 ////////////////////////////////CAROUSEL////////////////////////////////////////
 
 #carouselExampleIndicators {
   margin-top: 70px;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 
 .carousel-control-prev, .carousel-control-next, .carousel-indicators {
@@ -218,6 +201,8 @@
 .cards-row1-recapitulatif-show, .cards-row2-recapitulatif-show {
   display: flex;
   justify-content: space-between;
+  margin-right: 150px;
+  margin-left: 150px;
 }
 
 .cards-row1-recapitulatif-show {
@@ -250,12 +235,14 @@
 
 .infosaved-show {
   margin-top: 100px;
-  margin-bottom: 50px;
 }
 
 .cards-infosaved-show {
   display: flex;
   justify-content: space-between;
+  margin-right: 150px;
+  margin-left: 150px;
+  padding-bottom: 60px;
 }
 
 .card-infosaved-show {
@@ -301,12 +288,4 @@
 .background-infosaved {
   background-color: #ece9fd;
   position: relative;
-}
-
-.background-infosaved:before {
-    content:"";
-    position: absolute;
-    height: 500px;
-    left: -2000px;
-    z-index: -1;
 }
