@@ -50,15 +50,49 @@ font-weight: 900;
 color: #8C30F5;
 }
 
-//ETAPES
+//CHIFFRES
+.banner-lbn-numbers {
+display: flex;
+flex-direction: row;
+align-items: flex-start;
 
+position: static;
+
+flex: none;
+order: 6;
+flex-grow: 0;
+margin: 0px 0px;
+}
+
+.banner-lbn-numbers-h2 {
+position: static;
+width: 540px;
+height: 128px;
+left: 0px;
+top: 0px;
+
+font-style: normal;
+font-weight: 800;
+font-size: 40px;
+line-height: 45px;
+padding-left: 50px;
+
+font-feature-settings: 'salt' on, 'liga' off;
+
+color: #18191F;
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 8px 0px;
+}
 
 //AVIS
 .banner-lbn-avis {
   position: static;
-  height: 896px;
+  height: 660px;
   left: 0px;
-  top: 1836px;
+  top: 2408px;
   background: #D5FAFC;
   flex: none;
   order: 5;
@@ -84,17 +118,17 @@ position: absolute;
 width: 445px;
 height: 232px;
 left: 150px;
-top: 2417px;
+top: 2370px;
 }
 
 .box-avis-1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 34px;
+    padding: 24px;
     position: absolute;
     width: 300px;
-    height: 340px;
+    height: 290px;
     top: 312px;
     background: #FFFFFF;
     border-radius: 8px;
@@ -112,8 +146,8 @@ padding: 32px;
 
 position: absolute;
 width: 445px;
-height: 268px;
-top: 2428px;
+height: 211px;
+top: 2421px;
 left: 548px;
 
 background: #FFFFFF;
@@ -130,8 +164,8 @@ padding: 32px;
 
 position: absolute;
 width: 350px;
-height: 300px;
-top: 2762px;
+height: 228px;
+top: 2718px;
 left: 548px;
 
 background: #FFFFFF;
