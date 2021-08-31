@@ -52,7 +52,7 @@
 .stepper-item-show::before {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #e8e4e4;
   width: 100%;
   top: 50px;
   left: -50%;
@@ -62,7 +62,7 @@
 .stepper-item-show::after {
   position: absolute;
   content: "";
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #e8e4e4;
   width: 100%;
   top: 50px;
   left: 50%;
@@ -78,11 +78,11 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: #ccc;
+  background: #e8e4e4;
   margin-bottom: 6px;
 }
 
-.step-counter-show, .step-counter-show.active, .step-counter-show.completed, .step-counter-show:hover {
+.step-counter-show, .step-counter-show.completed, .step-counter-show:hover {
   color: white;
   text-decoration: none;
   width: 100px;
@@ -144,14 +144,33 @@
     background-color: #73678a46;
     position: absolute;
     height: 500px;
-    width: 4000px;
+    width: 3275px;
     left: -2000px;
     z-index: -1;
 }
 
-.button-acceder-chatbot-show {
+.div-button-acceder-chatbot-show {
   display: flex;
   justify-content: center;
+}
+
+.button-acceder-chatbot-show {
+  text-decoration: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  border-color: #8C30F5;
+  color: #8C30F5;
+  border: 1px solid;
+  padding: 10px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.button-acceder-chatbot-show:hover {
+  color: #8C30F5;
+  transform: scale(1.08);
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 ////////////////////////////////CAROUSEL////////////////////////////////////////
@@ -287,7 +306,7 @@
     background-color: #ece9fd;
     position: absolute;
     height: 500px;
-    width: 4000px;
+    width: 3275px;
     left: -2000px;
     z-index: -1;
 }
