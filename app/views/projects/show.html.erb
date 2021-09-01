@@ -1,7 +1,7 @@
 
   <div class="titles-show">
       <h1 class="title-show">Votre Projet</h1>
-      <h2 class="subtitle-show">- <%= @project.title %> -</h2>
+      <h2 class="subtitle-show"><%= @project.title %></h2>
   </div>
 
                               <%# PROGRESSION %>
@@ -95,7 +95,7 @@
 
   <div class="recapitulatif-show">
 
-    <h2 class="h2-recapitulatif-show">- Votre Récapitulatif -</h2>
+    <h2 class="h2-recapitulatif-show">Votre Récapitulatif</h2>
 
     <div class="cards-row1-recapitulatif-show">
 
@@ -155,13 +155,20 @@
 
   </div>
 
+  <%# ANNONCE %>
+  <div class="background-annonce">
+    <div class="annonce-show">
+      <h2 class="h2-annonce-show">Pré-visualisation de votre annonce</h2>
+    </div>
+  </div>
+
                       <%# VOS INFORMATIONS SAUVEGARDEES %>
 
-  <div class="background-infosaved">
+  <%#   <div class="background-infosaved">
 
     <div class="infosaved-show">
 
-      <h2 class="h2-infosaved-show">- Vos Informations Sauvegardées -</h2>
+      <h2 class="h2-infosaved-show">Vos Informations Sauvegardées</h2>
 
       <div class="cards-infosaved-show">
 
@@ -199,6 +206,6 @@
 
     </div>
 
-  </div>
+  </div>%>
 
 <%= render "shared/footer" %>
