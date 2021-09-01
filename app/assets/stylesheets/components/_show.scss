@@ -290,6 +290,8 @@
   position: relative;
 }
 
+////////////////////////////////ANNONCE///////////////////////////////////
+
 .background-annonce {
   background-color: #ece9fd;
   position: relative;
@@ -303,4 +305,32 @@
   padding-top: 45px;
   text-align: center;
   font-weight: bold;
+}
+
+. {
+border: 1px solid #000;
+}
+
+}
+.top {
+  padding : 20px 30px;
+}
+
+.ti {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 260px);
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 30px;
+    line-height: 35px;
+}
+
+.prix {
+  display: inline-block;
+  vertical-align: middle;
+  width: 260px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: right;
 }
