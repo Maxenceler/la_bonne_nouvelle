@@ -1,18 +1,41 @@
+.div-avatar {
+  width: 450px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.avatar-chatbot {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #dcc6f5;
+}
+
+.avatar-name-chatbot {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: #8C30F5;
+  font-weight: bold;
+}
+
 .card-chatbot {
   overflow: scroll;
-  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  transition: 0.3s;
   color: black;
-  width: 350px;
-  height: 300px;
+  width: 450px;
+  height: fit-content;
+  border-radius: 5px;
 }
 
-.card-chatbot:hover {
-  transform: scale(1.04);
+.card-picture {
+  object-fit: cover;
+  height: 160px;
+  width: 450px;
+  object-position: center;
 }
 
-.card-chatbot > .img-card-chatbot {
+.card-chatbot > .card-picture {
   height: 130px;
   width: 100%;
   object-fit: cover;

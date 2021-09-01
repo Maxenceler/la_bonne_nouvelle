@@ -54,7 +54,7 @@ question1C = Question.create!(step: step1, content: "Très bien", name: "tres-bi
 
 ################################QUESTION2#######################################
 
-file = URI.open("https://images.unsplash.com/photo-1624542315171-055a187b7b2d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80")
+file = URI.open("https://images.unsplash.com/photo-1623631896463-276ef87749a2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1602&q=80")
 question2A = Question.new(step: step1, content: "Le choix du notaire est essentiel dans la vente de votre bien ! En avez-vous déjà un ?", name: "choix-notaire")
 question2A.photo.attach(io: file, filename: 'img', content_type: 'image')
 question2A.save!
@@ -71,7 +71,7 @@ question2C = Question.create!(step: step1, content: " N'hésitez pas à contacte
 ################################QUESTION3#######################################
 
 
-file = URI.open("https://images.unsplash.com/photo-1604859628347-d87170b4e4bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1460&q=80")
+file = URI.open("https://images.unsplash.com/photo-1566013656433-e818796d04f7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80")
 question3A = Question.new(
   step: step1, name: "questions-diagnostics",
   content: "Pour vendre votre bien, il y a plusieurs diagnostics à réaliser. Comptez entre 100€ et 500€ pour l’intégralité du pack.
@@ -141,7 +141,7 @@ question3D = Question.create!(step: step1, content: "Retrouvez les diagnostiqueu
 
 
 ################################QUESTION7#######################################
-file = URI.open("https://images.unsplash.com/photo-1519068554083-0fb38e848f59?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80")
+file = URI.open("https://images.unsplash.com/photo-1604859628347-d87170b4e4bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1460&q=80")
 question7A = Question.new(step: step3, content: "Nous allons désormais pouvoir créer l’annonce de vente de votre bien.", name: "creation-annonce")
 question7A.photo.attach(io: file, filename: 'img', content_type: 'image')
 question7A.save!
