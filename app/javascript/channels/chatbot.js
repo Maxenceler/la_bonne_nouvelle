@@ -1,19 +1,11 @@
 import { post } from "jquery";
 import { fetchWithToken } from "../utils/fetch_with_token"
 
-
-const fakeTyping = `<div class="col-1 fake-writing">
-                      <div class="circle-writing"><i class="fas fa-circle circle-chatbot"></i></div>
-                      <div class="circle-writing"><i class="fas fa-circle second-circle-chatbot"></i></div>
-                      <div class="circle-writing"><i class="fas fa-circle third-circle-chatbot"></i></div>
-                    </div>`
-
 const displayNextQuestion = (currentQuestion) => {
   const selector = currentQuestion.dataset.nextQuestionName
   if (selector) {
     const futureQuestion = document.querySelector(`#${selector}`)
     futureQuestion.classList.remove("d-none");
-    opacityTransition(futureQuestion)
     displayNextQuestion(futureQuestion)
   }
 }
@@ -37,46 +29,15 @@ const saveAnswers = (responseId, projectId) => {
 }
 
 
-const opacityTransition = (question) => {
-  const arrayChildren = Array.from(question.children)
-  setTimeout(() => {
-    question.insertAdjacentHTML("afterbegin", fakeTyping)
-  }, 500);
-
-  setTimeout(() => {
-    question.children[0].remove()
-  }, 2000);
-  arrayChildren.forEach((child, index) => {
-    setTimeout(() => {
-      child.classList.add("going-visible")
-    }, 2000 + index * 500);
-  })
-}
-
-const handleTypingEffect = () => {
-  // add typing effect
-  const typingEffect = document.querySelector(".fake-writing")
-  typingEffect.classList.remove("d-none")
-  setTimeout(() => {
-    // typingEffect.remove()
-  }, 2000);
-
-}
-
 const handleNewAnswer = (event) => {
   const nextQuestionName = event.currentTarget.dataset.nextQuestionName
   const responseId = event.currentTarget.dataset.responseId
   const projectId = event.currentTarget.dataset.projectId
   saveAnswers(responseId, projectId)
-
   const nextQuestion = document.querySelector(`#${nextQuestionName}`)
   nextQuestion.classList.remove("d-none");
-  console.log(nextQuestion.children)
-
-
-  opacityTransition(nextQuestion)
-
   const nextAnswer = event.currentTarget.nextElementSibling
+  console.log(nextAnswer)
   if (nextAnswer) {
     nextAnswer.classList.add("d-none")
   } else {
@@ -85,10 +46,7 @@ const handleNewAnswer = (event) => {
   }
 
   nextQuestion.scrollIntoView()
-
-  setTimeout(() => {
-    displayNextQuestion(nextQuestion)
-  }, 2000);
+  displayNextQuestion(nextQuestion)
 
 };
 
