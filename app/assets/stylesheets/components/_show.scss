@@ -309,6 +309,8 @@
 
 .annonce-bloc {
 border: 1px solid #000;
+margin: 148px;
+background-color: white;
 }
 
 .top {
@@ -341,7 +343,7 @@ border: 1px solid #000;
 }
 
 .detail {
-  width: 38%;
+  width: 39%;
   padding: 25px 30px 130px 30px;
   border-top: 1px solid #000;
   position: relative;
@@ -368,9 +370,17 @@ border: 1px solid #000;
 }
 
 .chambres {
-    background-image: url(../img/pictos_biens/picto_chambres.png);
+    background-image: url("picto_chambres.png");
 }
 
-.exterieur {
-    background-image: url(../img/pictos_biens/picto_exterieur.png);
+.etat {
+    background-image: url("picto_etat.png");
+}
+
+.sdb {
+    background-image: url("picto_sdb.png");
+}
+
+.surface {
+    background-image: url("picto_3.png");
 }
