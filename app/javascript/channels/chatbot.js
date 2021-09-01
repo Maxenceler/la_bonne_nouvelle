@@ -37,7 +37,14 @@ const handleNewAnswer = (event) => {
   const nextQuestion = document.querySelector(`#${nextQuestionName}`)
   nextQuestion.classList.remove("d-none");
   const nextAnswer = event.currentTarget.nextElementSibling
-  nextAnswer.classList.add("d-none")
+  console.log(nextAnswer)
+  if (nextAnswer) {
+    nextAnswer.classList.add("d-none")
+  } else {
+    const previousAnswer = event.currentTarget.previousElementSibling
+    previousAnswer.classList.add("d-none")
+  }
+
   nextQuestion.scrollIntoView()
   displayNextQuestion(nextQuestion)
 
