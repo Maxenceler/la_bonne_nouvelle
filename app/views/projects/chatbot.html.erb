@@ -2,152 +2,196 @@
 <% if @response_projects.exists? %>
   <div id="big-container-chatbot">
     <div class="container">
+
       <% @response_projects.each do |response_project| %>
-        <div class="group-container question-answer">
-          <div class="question-group">
-            <div class="question col-8">
-              <%= render "shared/card_chatbot", question: response_project.response.question %>
-            </div>
-          </div>
-​
-          <div class="answer-flex">
-            <div class="answer bg-dark text-white" data-next-question-name="<%= response_project.response.next_question_name %>" data-response-id="<%= response_project.response.id %>" data-project-id="<%= @project.id %>">
-              <%= response_project.response.content %>
-            </div>
+
+      <div class="group-container question-answer" style="width: 850px;">
+
+        <div class="question-group">
+          <div class="question col-8">
+            <%= render "shared/cards_prefaites_chatbot", question: response_project.response.question %>
           </div>
         </div>
+
+        <div class="avatar-answer">
+          <p class="avatar-username-chatbot">Vous</p>
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80" alt="" class="avatar-chatbot">
+          <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
+        </div>
+
+        <div class="answer-flex">
+          <div class="answer" data-next-question-name="<%= response_project.response.next_question_name %>" data-response-id="<%= response_project.response.id %>" data-project-id="<%= @project.id %>">
+            <%= response_project.response.content %>
+          </div>
+        </div>
+
+      </div>
       <% end %>
 ​
 ​
 <%# Permet de trouver la question suivant la dernière réponse cliquée %>
 ​
       <% question = Question.where(name: @response_projects.last.response.next_question_name)[0] %>
-      <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+      <div class="group-container question-answer" style="width: 850px;" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
         <div class="question-group">
           <div class="question col-8">
-            <%= question.content %>
+            <%= render "shared/cards_prefaites_chatbot", question: question %>
           </div>
         </div>
       </div>
-    <%#  Si la question est suivie par une autre question (sans réponse entre les 2) %>
-​
-        <% if question.next_question_name %>
-          <% next_question = Question.where(name: question.next_question_name)[0] %>
-          <div class="group-container question-answer" id="<%= question.name %>" data-next-question-name="<%= next_question.next_question_name %>">
-            <div class="question-group">
-              <div class="question col-8">
-                <%= next_question.content %>
-              </div>
-            </div>
-  ​
-          <div class="answer-flex">
-            <% next_question.responses.each do |response| %>
 
-                  <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
-                    <%= response.content %>
-                  </div>
-            <% end %>
-            </div>
-          </div>
-  ​
-    <%#  questions.each + question.responses.each ne fonctionnent pas %>
+<%#  Si la question est suivie par une autre question (sans réponse entre les 2) %>
 ​
-    <% @questions.each do |question| %>
-      <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+      <% if question.next_question_name %>
+      <% next_question = Question.where(name: question.next_question_name)[0] %>
+      <div class="group-container question-answer" style="width: 850px;" id="<%= question.name %>" data-next-question-name="<%= next_question.next_question_name %>">
         <div class="question-group">
           <div class="question col-8">
-            <%= question.content %>
+            <%= render "shared/cards_prefaites_chatbot", question: next_question %>
           </div>
         </div>
   ​
-      <div class="answer-flex">
-        <% question.responses.each do |response| %>
-          <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+        <div class="avatar-answer">
+          <p class="avatar-username-chatbot">Vous</p>
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80" alt="" class="avatar-chatbot">
+          <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
+        </div>
+
+        <div class="answer-flex">
+          <% next_question.responses.each do |response| %>
+          <div class="answer" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
             <%= response.content %>
           </div>
-        <% end %>
+          <% end %>
         </div>
+
       </div>
   ​
-    <% end %>
+<%#  questions.each + question.responses.each ne fonctionnent pas %>
 ​
-​
-  <%# chargement questions et réponses si la q est suivie par une réponse après chargement  %>
-​
-      <% else %>
-        <% @questions.each do |question| %>
-        <div class="container question-answer d-none" id="<%= question.name %>">
-          <div class="question-group">
-            <div class="question col-8">
-              <%= question.content %>
-            </div>
-          </div>
-
-          <div class="answer-flex">​
-            <% question.responses.each do |response| %>
-              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
-                <%= response.content %>
-              </div>
-          <% end %>
+      <% @questions.each do |question| %>
+      <div class="group-container question-answer d-none" style="width: 850px;" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+        <div class="question-group">
+          <div class="question col-8">
+            <%= render "shared/cards_prefaites_chatbot", question: question %>
           </div>
         </div>
+
+
+        <div class="answer-flex">
+          <% question.responses.each do |response| %>
+          <div class="answer" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+            <%= response.content %>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
       <% end %>
-    <% end %>
-  </div>
-</div>
 ​
 ​
-<%# chargement chatbot si première connexion %>
+<%# chargement questions et réponses si la q est suivie par une réponse après chargement  %>
 ​
-<% else %>
-  <div id="big-container-chatbot">
-  <div class="container question-answer">
-    <div class="question-group">
-      <div class="question col-8">
-        <p>Bonjour je suis Violette, je vais t'accompagner dans ton parcours de vente, prêt? On y va.</p>
+      <% else %>
+      <% @questions.each do |question| %>
+      <div class="group-container question-answer d-none" style="width: 850px;" id="<%= question.name %>">
+        <div class="question-group">
+          <div class="question col-8">
+            <%= render "shared/cards_prefaites_chatbot", question: question %>
+          </div>
+        </div>
+
+      <div class="avatar-answer">
+        <p class="avatar-username-chatbot">Vous</p>
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80" alt="" class="avatar-chatbot">
+        <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
+      </div>
+
+        <div class="answer-flex">​
+          <% question.responses.each do |response| %>
+            <div class="answer" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+              <%= response.content %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+
+      <% end %>
+​
+​<%# chargement chatbot si première connexion %>
+​
+    <% else %>
+
+    <div class="group-container question-answer">
+
+      <div class="div-avatar-welcome">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80" alt="" class="avatar-chatbot">
+        <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
+        <p class="avatar-name-chatbot">Violette</p>
+      </div>
+
+      <div class="question-group">
+        <div class="question col-8">
+          <p class="welcome-message-chatbot">Bonjour je suis Violette, je vais t'accompagner dans ton parcours de vente.<br> Prêt ? On y va !</p>
+        </div>
+      </div>
+
+    </div>
+  ​
+  <%# Permet d'afficher la première question car pas de d-none %>
+  ​
+    <% @questions.each do |question| %>
+    <% if question.name == "estimation-approximative" %>
+    <div class="group-container question-answer" id="<%= question.name %>">
+      <div class="question-group">
+        <div class="question col-8">
+          <%= render "shared/cards_prefaites_chatbot", question: question %>
+        </div>
+      </div>
+
+      <div class="avatar-answer">
+        <p class="avatar-username-chatbot">Vous</p>
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80" alt="" class="avatar-chatbot">
+        <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
+      </div>
+
+      <div class="answer-flex">
+        <% question.responses.each do |response| %>
+        <div class="answer" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+          <%= response.content %>
+        </div>
+        <% end %>
       </div>
     </div>
-  </div>
-​
-<%# Permet d'afficher la première question car pas de d-none %>
-​
-    <% @questions.each do |question| %>
-      <% if question.name == "estimation-approximative" %>
-        <div class="container question-answer" id="<%= question.name %>">
-          <div class="question-group">
-            <div class="question col-8">
-              <%= question.content %>
-            </div>
-          </div>
-​
-          <div class="answer-flex">
-            <% question.responses.each do |response| %>
-              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
-                <%= response.content %>
-              </div>
-            <% end %>
-          </div>
+  ​
+  <%# Charge en d-none toutes les questions et réponses //////////// Probleme avatar user ici  %>
+  ​
+    <% else %>
+    <div class="group-container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+      <div class="question-group">
+        <div class="question col-8">
+          <%= render "shared/cards_prefaites_chatbot", question: question %>
         </div>
-​
-<%# Charge en d-none toutes les questions et réponses %>
-​
-      <% else %>
-      <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
-          <div class="question-group">
-            <div class="question col-8">
-              <%= render "shared/card_chatbot", question: question %>
-            </div>
-          </div>
-​
-​          <div class="answer-flex" >
-            <% question.responses.each do |response| %>
-                <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
-                  <%= response.content %>
-                </div>
-            <% end %>
-​          </div>
-      <% end %>
-    </div>
+      </div>
+
+      <div class="avatar-answer">
+        <p class="avatar-username-chatbot">Vous</p>
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80" alt="" class="avatar-chatbot">
+        <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
+      </div>
+
+      <div class="answer-flex" >
+        <% question.responses.each do |response| %>
+        <div class="answer" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+          <%= response.content %>
+        </div>
+        <% end %>
+      </div>
     <% end %>
+    </div>
+
   </div>
+  <% end %>
+</div>
 <% end %>
