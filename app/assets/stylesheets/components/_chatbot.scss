@@ -2,11 +2,13 @@
   text-align: center;
   margin-top: 40px;
   margin-left: 60px;
-  width: 1000px;
+  width: 850px;
 }
 
-.group-container{
+.group-container {
   width: 850px;
+  margin-left: 60px;
+  margin-top: 40px;
 }
 
 .question-group {
@@ -58,4 +60,12 @@
 .answer-flex {
   display: flex;
   justify-content: flex-end;
+}
+
+.welcome-message-chatbot {
+  width: 450px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
 }
