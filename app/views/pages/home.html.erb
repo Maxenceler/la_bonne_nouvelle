@@ -5,6 +5,7 @@
   </div>
 </div>
 
+<%# Bloc Mineur Features %>
   <div class="container banner-lbn-features", style="text-align:center; margin-top: 40px; margin-bottom: 40px">
     <h2 id="anchor-features"> Comment nous vous <br>simplifions la vente ?</h2>
     <p style="margin-top: 30px">La bonne nouvelle, c’est que vous allez vendre votre bien <br> facilement et au meilleur prix.</p>
@@ -13,16 +14,19 @@
   <div class="container", style="text-align: center; color ">
     <div class="row">
       <div class="col-sm">
+        <%= image_tag "HP_icone.png", class:"banner-lbn-features-img", alt: "" %>
         <h3 style="font-weight: bold; font-size: x-large; margin-bottom: 20px">Accompagnement</h3>
-        <p style="margin-bottom: 60px;">Suivez votre progression et validez chacunes des démarches obligatoires pour réaliser la vente, simplement depuis votre espace dédié.</p>
+        <p style="margin-bottom: 60px;">Suivez votre progression et validez chacune des démarches obligatoires pour réaliser la vente.</p>
       </div>
 
     <div class="col-sm">
-      <h3 style="font-weight: bold; font-size: x-large; margin-bottom: 20px">Chatbot & Conseils pro</h3>
-      <p style="margin-bottom: 60px;">Notre chatbot Violette, vous accompagne à chaque étape de la vente. Laissez-vous guider par ses conseils, tirés de professionnels.</p>
+      <%= image_tag "HP_icone.png", class:"banner-lbn-features-img", alt: "" %>
+      <h3 style="font-weight: bold; font-size: x-large; margin-bottom: 20px">Chatbot</h3>
+      <p style="margin-bottom: 60px;">Notre chatbot Violette, vous accompagne à chaque étape de la vente de votre bien.</p>
     </div>
 
     <div class="col-sm">
+      <%= image_tag "HP_icone.png", class:"banner-lbn-features-img", alt: "" %>
       <h3 style="font-weight: bold; font-size: x-large; margin-bottom: 20px">Estimation de votre bien</h3>
       <p style="margin-bottom: 60px;">Estimez votre bien grâce à notre simulateur intelligent et vendez au meilleur prix.</p>
     </div>
@@ -30,27 +34,31 @@
 
   <div class="row">
     <div class="col-sm">
+      <%= image_tag "HP_icone.png", class:"banner-lbn-features-img", alt: "" %>
       <h3 style="font-weight: bold; font-size: x-large; margin-bottom: 20px">Création de l’annonce</h3>
-      <p>La Bonne Nouvelle générera pour vous une annonce pertinente et vous partagera des conseils précieux pour vendre efficacement.</p>    </div>
+      <p>La Bonne Nouvelle générera pour vous une annonce pertinente.</p>    </div>
     <div class="col-sm">
-      <h3 style="font-weight: bold; font-size: x-large; margin-bottom: 20px">Agenda de visites</h3>
-      <p>Gérer votre planning de visite facilement depuis votre espace. Renseignez vos disponibilités et le tour est joué.  </p>
+      <%= image_tag "HP_icone.png", class:"banner-lbn-features-img", alt: "" %>
+      <h3 style="font-weight: bold; font-size: x-large; margin-bottom: 20px"> Conseils de pro</h3>
+      <p>Notre accompagnement a été pensé par des professionnels de l'immobilier</p>
     </div>
 
     <div class="col-sm">
+      <%= image_tag "HP_icone.png", class:"banner-lbn-features-img", alt: "" %>
       <h3 style="font-weight: bold; font-size: x-large; margin-bottom: 20px" >Choix des prestataires</h3>
       <p>Notaires, Diagnostiqueurs... Nous vous recommanderons les meilleurs professionnels.</p>
     </div>
   </div>
 </div>
 
+<%# Bloc Mineur Stepper %>
 <div class= "background-hp">
   <div class="steplist-hp">
-
-    <p id="anchor-etapes", class="p-title-hp", style="padding-bottom: 20px; padding-top: 30px;">Un coup d'oeil <br>sur les étapes à suivre</p>
+<div class="container">
+    <p id="anchor-etapes", class="p-title-hp", style="padding-bottom: 20px; margin-top: 30px;">Un coup d'oeil <br>sur les étapes à suivre</p>
 
     <div class="img-card-hp">
-      <img src="https://images.unsplash.com/photo-1506784781895-38847b5e50e7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1535&q=80", class="img-hp" />
+     <%= image_tag "HP_illu_steps.png", class:"", alt: "" %>
 
       <div class="cards-steps-hp">
 
@@ -84,63 +92,69 @@
 
       </div>
     </div>
+     </div>
   </div>
 </div>
 
+<%# Bloc Mineur Numbers  %>
 <div class="banner-lbn-numbers">
   <div class="container">
-    <h2 class="banner-lbn-numbers-h2" >15 ans d’expertise <br> à votre service</h1>
-  </div>
+    <div class="d-flex">
+      <h2 class="banner-lbn-numbers-h2" >15 ans d’expertise <br> à votre service</h2>
 
-  <div style="text-align: center;">
-    <div >
-      <p style="font-weight: 800; font-size: 20px;">2 mois</p>
-      <p style="font-size: smaller; margin-top: -18px">durée max d’une vente</p>
-    </div>
+      <div class="text-center">
+        <div class="d-flex">
+          <div class="w-100", style="margin-right: 60px;">
+            <p class="w-100", style="font-weight: 800; font-size: 20px;">2 mois</p>
+            <p class="w-100", style="font-size: smaller; margin-top: -18px">pour vendre</p>
+          </div>
+          <div class="w-100">
+            <p class="w-100", style="font-weight: 800; font-size: 20px;">5000+</p>
+            <p class="w-100", style="font-size: smaller; margin-top: -18px">biens vendus</p>
+          </div>
+        </div>
 
-    <div>
-      <p style="font-weight: 800; font-size: 20px;">5000+</p>
-      <p style="font-size: smaller; margin-top: -18px">biens vendus au meilleur prix</p>
-    </div>
-  </div>
+        <div class="d-flex">
+          <div class="w-100", style="margin-right: 60px;">
+            <p style="font-weight: 800; font-size: 20px;">2 Millions</p>
+            <p style="font-size: smaller; margin-top: -18px">d’utilisateurs</p>
+          </div>
 
-  <div style="text-align: center">
-    <div>
-      <p style="font-weight: 800; font-size: 20px;">2 Millions</p>
-      <p style="font-size: smaller; margin-top: -18px">d’utilisateurs</p>
-    </div>
-
-    <div>
-      <p style="font-weight: 800; font-size: 20px;">140</p>
-      <p style="font-size: smaller; margin-top: -18px">professionnels de l’immobilier <br> travaillent à nos côtés</p>
+          <div class="w-100">
+            <p style="font-weight: 800; font-size: 20px;">140</p>
+            <p style="font-size: smaller; margin-top: -18px">collaborateurs pro</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<%# Bloc Mineur Avis %>
 
 <div class="banner-lbn-avis">
   <div class="container">
-    <h1>Ils ont une bonne <br> nouvelle à partager</h1>
-  </div>
+    <div class="container">
+      <h1>Ils ont une bonne <br> nouvelle à partager</h1>
+    </div>
 
-  <div class="box-avis-1">
-  <%= image_tag "double_quote.png", class:"banner-lbn-avis-img", alt: "" %>
-    <p> Je suis bleuffée par l’efficacité de la BONNE NOUVELLE. En peu de temps et très facilement, j’ai pu mettre en vente mon appartement en évitant les pièges de l’immobilier. Je recommande vivement. </p>
-    <p style="font-weight: 700; margin-bottom: 0px;">Estelle D.</p>
-    <p style="font-size:smaller; color:grey">Appartement, Lille</p>
-  </div>
+    <div class="box-avis-1">
+        <p> Je suis bleuffée par l’efficacité de la BONNE NOUVELLE. En peu de temps et très facilement, j’ai pu mettre en vente mon appartement en évitant les pièges de l’immobilier. Je recommande vivement. </p>
+        <p style="font-weight: 700; margin-bottom: 0px;">Estelle D.</p>
+        <p style="font-size:smaller; color:grey">Appartement, Lille</p>
+    </div>
 
-  <div class="box-avis-2">
-  <%= image_tag "double_quote.png", class:"banner-lbn-avis-img", alt: "" %>
-    <p>Merci ! Quel gain de temps. ! Je n’ai pas eu besoin de chercher les informations. Tout est clair et personnalisé en fonction de mes besoins.” </p>
-    <p style="font-weight: 700; margin-bottom: 0px;">Violette R</p>
-    <p style="font-size:smaller; color:grey">Maison, Wambrechies</p>
-  </div>
+    <div class="box-avis-2">
+      <p>Merci ! Quel gain de temps. ! Je n’ai pas eu besoin de chercher les informations. Tout est clair et personnalisé en fonction de mes besoins.” </p>
+      <p style="font-weight: 700; margin-bottom: 0px;">Violette R</p>
+      <p style="font-size:smaller; color:grey">Maison, Wambrechies</p>
+    </div>
 
-  <div class="box-avis-3">
-    <%= image_tag "double_quote.png", class:"banner-lbn-avis-img", alt: "" %>
-    <p> Je suis convaincu. En 2 semaines j’ai vendu ma maison avec piscine au dessus du prix que j’envisageais. </p>
-    <p style="font-weight: 700; margin-bottom: 0px;">Maxence L.</p>
-    <p style="font-size:smaller; color:grey">Maison, Bondue</p>
+    <div class="box-avis-3">
+      <p> Je suis convaincu. En 2 semaines j’ai vendu ma maison avec piscine au dessus du prix que j’envisageais. </p>
+      <p style="font-weight: 700; margin-bottom: 0px;">Maxence L.</p>
+      <p style="font-size:smaller; color:grey">Maison, Bondue</p>
+    </div>
   </div>
 </div>
 
