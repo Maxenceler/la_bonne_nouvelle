@@ -163,6 +163,26 @@
         </div>
         <% end %>
       </div>
+​
+<%# Charge en d-none toutes les questions et réponses %>
+​
+      <% else %>
+      <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+          <div class="question-group not-visible">
+          <div class="question-group">
+            <div class="question col-8">
+              <%= render "shared/card_chatbot", question: question %>
+            </div>
+          </div>
+​
+​          <div class="answer-flex" >
+            <% question.responses.each do |response| %>
+                <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                  <%= response.content %>
+                </div>
+            <% end %>
+​          </div>
+      <% end %>
     </div>
   ​
   <%# Charge en d-none toutes les questions et réponses //////////// Probleme avatar user ici  %>
