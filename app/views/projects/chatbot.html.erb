@@ -50,17 +50,17 @@
             </div>
           </div>
   ​
-    <%#  questions.each + question.responses.each ne fonctionnent pas %>
+    <%#  questions.each + question.responses.each  %>
 ​
     <% @questions.each do |question| %>
       <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
-        <div class="question-group">
+        <div class="question-group not-visible">
           <div class="question col-8">
             <%= question.content %>
           </div>
         </div>
   ​
-      <div class="answer-flex">
+      <div class="answer-flex not-visible">
         <% question.responses.each do |response| %>
           <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
             <%= response.content %>
@@ -77,13 +77,13 @@
       <% else %>
         <% @questions.each do |question| %>
         <div class="container question-answer d-none" id="<%= question.name %>">
-          <div class="question-group">
+          <div class="question-group not-visible">
             <div class="question col-8">
               <%= question.content %>
             </div>
           </div>
 
-          <div class="answer-flex">​
+          <div class="answer-flex not-visible">​
             <% question.responses.each do |response| %>
               <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
                 <%= response.content %>
@@ -101,13 +101,13 @@
 ​
 <% else %>
   <div id="big-container-chatbot">
-  <div class="container question-answer">
-    <div class="question-group">
-      <div class="question col-8">
-        <p>Bonjour je suis Violette, je vais t'accompagner dans ton parcours de vente, prêt? On y va.</p>
+    <div class="container question-answer">
+      <div class="question-group not-visible">
+        <div class="question col-8">
+          <p>Bonjour je suis Violette, je vais t'accompagner dans ton parcours de vente, prêt? On y va.</p>
+        </div>
       </div>
     </div>
-  </div>
 ​
 <%# Permet d'afficher la première question car pas de d-none %>
 ​
@@ -132,14 +132,18 @@
 <%# Charge en d-none toutes les questions et réponses %>
 ​
       <% else %>
+
+
+
       <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
-          <div class="question-group">
+
+          <div class="question-group not-visible">
             <div class="question col-8">
               <%= render "shared/card_chatbot", question: question %>
             </div>
           </div>
-​
-​          <div class="answer-flex" >
+
+​          <div class="answer-flex not-visible" >
             <% question.responses.each do |response| %>
                 <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
                   <%= response.content %>
@@ -151,3 +155,10 @@
     <% end %>
   </div>
 <% end %>
+
+ <%# typing effect %>
+
+<div class="container">
+
+
+</div>
