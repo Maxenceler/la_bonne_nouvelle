@@ -67,20 +67,34 @@
 
       </div>
   ​
+<<<<<<< HEAD
 <%#  questions.each + question.responses.each ne fonctionnent pas %>
 ​
       <% @questions.each do |question| %>
       <div class="group-container question-answer d-none" style="width: 850px;" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+=======
+    <%#  questions.each + question.responses.each ne fonctionnent pas %>
+​
+    <% @questions.each do |question| %>
+      <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+>>>>>>> parent of e4f192a (typing effect working)
         <div class="question-group">
           <div class="question col-8">
             <%= render "shared/cards_prefaites_chatbot", question: question %>
           </div>
         </div>
+<<<<<<< HEAD
 
 
         <div class="answer-flex">
           <% question.responses.each do |response| %>
           <div class="answer" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+=======
+  ​
+      <div class="answer-flex">
+        <% question.responses.each do |response| %>
+          <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+>>>>>>> parent of e4f192a (typing effect working)
             <%= response.content %>
           </div>
           <% end %>
@@ -93,14 +107,24 @@
 <%# chargement questions et réponses si la q est suivie par une réponse après chargement  %>
 ​
       <% else %>
+<<<<<<< HEAD
       <% @questions.each do |question| %>
       <div class="group-container question-answer d-none" style="width: 850px;" id="<%= question.name %>">
         <div class="question-group">
           <div class="question col-8">
             <%= render "shared/cards_prefaites_chatbot", question: question %>
+=======
+        <% @questions.each do |question| %>
+        <div class="container question-answer d-none" id="<%= question.name %>">
+          <div class="question-group">
+            <div class="question col-8">
+              <%= question.content %>
+            </div>
+>>>>>>> parent of e4f192a (typing effect working)
           </div>
         </div>
 
+<<<<<<< HEAD
       <div class="avatar-answer">
         <p class="avatar-username-chatbot">Vous</p>
         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1534&q=80" alt="" class="avatar-chatbot">
@@ -112,6 +136,13 @@
             <div class="answer" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
               <%= response.content %>
             </div>
+=======
+          <div class="answer-flex">​
+            <% question.responses.each do |response| %>
+              <div class="answer bg-dark text-white" data-next-question-name="<%= response.next_question_name %>" data-response-id="<%= response.id %>" data-project-id="<%= @project.id %>">
+                <%= response.content %>
+              </div>
+>>>>>>> parent of e4f192a (typing effect working)
           <% end %>
         </div>
       </div>
@@ -121,6 +152,7 @@
 ​
 ​<%# chargement chatbot si première connexion %>
 ​
+<<<<<<< HEAD
     <% else %>
 
     <div class="group-container question-answer">
@@ -135,12 +167,27 @@
         <div class="question col-8">
           <p class="welcome-message-chatbot">Bonjour je suis Violette, je vais t'accompagner dans ton parcours de vente.<br> Prêt ? On y va !</p>
         </div>
+=======
+<% else %>
+  <div id="big-container-chatbot">
+  <div class="container question-answer">
+    <div class="question-group">
+      <div class="question col-8">
+        <p>Bonjour je suis Violette, je vais t'accompagner dans ton parcours de vente, prêt? On y va.</p>
+>>>>>>> parent of e4f192a (typing effect working)
       </div>
 
     </div>
+<<<<<<< HEAD
   ​
   <%# Permet d'afficher la première question car pas de d-none %>
   ​
+=======
+  </div>
+​
+<%# Permet d'afficher la première question car pas de d-none %>
+​
+>>>>>>> parent of e4f192a (typing effect working)
     <% @questions.each do |question| %>
     <% if question.name == "estimation-approximative" %>
     <div class="group-container question-answer" id="<%= question.name %>">
@@ -168,7 +215,10 @@
 ​
       <% else %>
       <div class="container question-answer d-none" id="<%= question.name %>" data-next-question-name="<%= question.next_question_name %>">
+<<<<<<< HEAD
           <div class="question-group not-visible">
+=======
+>>>>>>> parent of e4f192a (typing effect working)
           <div class="question-group">
             <div class="question col-8">
               <%= render "shared/card_chatbot", question: question %>
@@ -184,6 +234,7 @@
 ​          </div>
       <% end %>
     </div>
+<<<<<<< HEAD
   ​
   <%# Charge en d-none toutes les questions et réponses //////////// Probleme avatar user ici  %>
   ​
@@ -214,4 +265,8 @@
   </div>
   <% end %>
 </div>
+=======
+    <% end %>
+  </div>
+>>>>>>> parent of e4f192a (typing effect working)
 <% end %>

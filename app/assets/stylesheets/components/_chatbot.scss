@@ -62,10 +62,21 @@
   justify-content: flex-end;
 }
 
+<<<<<<< HEAD
 .welcome-message-chatbot {
   width: 450px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   padding: 10px;
   font-size: 15px;
+=======
+
+#big-container-chatbot {
+  text-align: center;
+  background-color: #ece9fd;
+}
+
+.group-container{
+  width: 1000px;
+>>>>>>> parent of e4f192a (typing effect working)
 }
