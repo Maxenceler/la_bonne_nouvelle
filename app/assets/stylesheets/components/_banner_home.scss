@@ -95,10 +95,9 @@ margin: 8px 0px;
 
 //AVIS
 .banner-lbn-avis {
-  position: static;
+  position: relative;
   height: 660px;
   left: 0px;
-  top: 2408px;
   background: #D5FAFC;
   flex: none;
   order: 5;
@@ -119,12 +118,10 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding: 0px;
-
 position: absolute;
 width: 445px;
 height: 232px;
 left: 150px;
-top: 2370px;
 }
 
 .box-avis-1 {
@@ -139,7 +136,6 @@ top: 2370px;
     background: #FFFFFF;
     border-radius: 8px;
     box-shadow: 0px 10px 20px rgba(41, 41, 42, 0.07);
-    top: 2530px;
     left: 160px;
 
 }
@@ -153,8 +149,8 @@ padding: 32px;
 position: absolute;
 width: 445px;
 height: 211px;
-top: 2421px;
 left: 548px;
+top: 386px;
 
 background: #FFFFFF;
 
@@ -171,7 +167,6 @@ padding: 32px;
 position: absolute;
 width: 350px;
 height: 228px;
-top: 2718px;
 left: 548px;
 
 background: #FFFFFF;
