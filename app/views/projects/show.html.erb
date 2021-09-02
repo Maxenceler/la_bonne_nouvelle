@@ -1,8 +1,6 @@
 
-  <div class="titles-show">
-      <h1 class="title-show">Votre Projet</h1>
-      <h2 class="subtitle-show"><%= @project.title %></h2>
-  </div>
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@project.title} is on #{DEFAULT_META["meta_product_name"]}" %>
 
                               <%# PROGRESSION %>
 
