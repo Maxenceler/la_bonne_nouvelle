@@ -137,57 +137,63 @@
 
   </div>
 
-                      <%# ANNONCE %>
-<div class="background-infosaved">
-  <div class="infosaved-show">
-    <h2 class="h2-infosaved-show">Pré-visualisation de votre annonce</h2>
 
+  <%# ANNONCE %>
+  <% if @project.main_photo.attached? %>
+<div class="background-annonce">
+  <div class="annonce-show">
+    <h2 class="h2-annonce-show">Pré-visualisation de votre annonce</h2>
+  </div>
 
-                      <%# VOS INFORMATIONS SAUVEGARDEES %>
-
-  <%# <div class="background-infosaved">
-
-    <div class="infosaved-show">
-
-      <h2 class="h2-infosaved-show">Vos Informations Sauvegardées</h2>
-
-      <div class="cards-infosaved-show">
-
-        <div class="card-infosaved-show">
-        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" class="img-card-infosaved-show">
-
-          <div class="card-content-infosaved-show">
-            <h2 class="info-title-infosaved-show">Les frais de notaire</h2>
-            <hr>
-            <p class="info-content-infosaved-show">Les frais de notaire sont acquittés par l’acheteur et comprennent <b>les frais et débours</b> (l’ensemble des sommes acquittées par le Notaire pour le compte du client) et <b>les émoluments</b> (la rémunération du notaire). <br><br> Pour donner un ordre d’idée, ces frais sont compris <b>entre 2% et 3 % du prix de vente pour un bien neuf</b> et peuvent aller <b>jusqu’à 8 % du prix de vente pour un bien ancien</b>.</p>
-          </div>
-        </div>
-
-        <div class="card-infosaved-show">
-        <img src="https://images.unsplash.com/photo-1566013656433-e818796d04f7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" class="img-card-infosaved-show">
-
-          <div class="card-content-infosaved-show">
-            <h2 class="info-title-infosaved-show">L'acompte</h2>
-            <hr>
-            <p class="info-content-infosaved-show">Il est courant de demander un acompte à l’acheteur afin de le <b>décourager à se retirer de la vente</b> sans motif et ainsi vous protéger.<br><br>Le montant de l’acompte demandé est libre (maximum de 10% du prix de vente). A noter : certains acheteurs ne seront pas très réceptifs à l’idée de verser une telle somme. A vous de juger si vous souhaitez tout de même insister et pour quel montant.<br><br>L’acompte est ensuite <b>bloqué par votre notaire</b> lors de la signature du compromis.<br><br>Si l’acquéreur se retire après le délai de rétractation sans raison prévue par une clause suspensive, <b>l’acompte vous sera versé</b> pour compenser la perte de temps et d’argent généré.</p>
-          </div>
-        </div>
-
-        <div class="card-infosaved-show">
-        <img src="https://images.unsplash.com/photo-1604859628347-d87170b4e4bb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1460&q=80" class="img-card-infosaved-show">
-
-          <div class="card-content-infosaved-show">
-            <h2 class="info-title-infosaved-show">Le droit de préemption</h2>
-            <hr>
-            <p class="info-content-infosaved-show"><b><u>Définition du droit de préemption</b></u><br><br>Si votre bien se situe dans une zone de préemption urbaine* <i>(zone définie par la mairie de votre ville)</i>, la mairie a la possibilité de préempter votre bien <b>dans un délai de 2 mois </b><i>(suivant la réception d’une déclaration envoyée par votre notaire)</i>. Cela signifie donc que votre vente ne pourra réellement être conclue qu’à l’issue de ce délai <i>(soit minimum 2 mois après la signature du compromis)</i>.<br><br>*N’hésitez pas à contacter le service urbanisme de votre mairie pour vérifier si votre maison se situe dans l’une de ces zones.<br><br><b><u>Que signifie préempter ?</b></u><br><br>C’est le fait pour la mairie de <b>racheter votre bien</b> au prix convenu avec votre acquéreur <b>à sa place</b>.<br><br><b><u>Pouvez-vous agir contre cette décision ?</b></u><br><br>Votre acheteur et vous, pouvez néanmoins agir contre cette action si la mairie l’a réalisée <b>sans objectif d'opération d'aménagement urbain</b>. N’hésitez pas à vous entretenir avec votre notaire pour de plus amples informations.</p>
-          </div>
-        </div>
-
+  <div class="annonce-bloc">
+    <div class="d-flex top">
+      <div class="ti">
+        <strong>Marcq en Baroeul</strong>
       </div>
 
+      <div class="prix">
+        <span class="prix"> <%= @project.selling_price%>€ </span>
+      </div>
     </div>
 
-  </div>
-  %>
+     <div>
+    <h1 style="font-size: 30px; font-weight: 500; text-align: -webkit-left; margin-bottom: 30px; margin-left: 25px">Vente <%= @project.project_type%> <%= @project.living_area %> m<sup>2</sup> à Marcq en Baroeul</h1>
+    </div>
 
+    <div class="desc">
+      <%#= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner rounded-0", style="">
+          <div class="carousel-item active">
+            <%= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
+          </div>
+          <% @project.photos.each do |photo|%>
+            <div class="carousel-item">
+              <%= cl_image_tag photo.key, crop: :fill, style:"width: inherit"%>
+            </div>
+          <% end %>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="detail">
+        <p style="font-size:14px; padding: 10%;"> <strong>Marcq en Baroeul</strong>, secteur <strong>Buisson</strong> . Découvrez cette maison se composant d'une entrée desservant d'un espace de vie d'environ 40 m² se composant d'un séjour et une cuisine équipée ainsi qu' une salle de douche et un espace buanderie. À l'étage, vous trouverez 2 chambres avec parquet. Un beau jardin vient parfaire ce bien. </p>
+			  <ul class="pictos_biens">
+        <li class="chambres"> <%= @project.rooms_number%> chambres</li>
+        <li class="sdb"> <%= @project.bathrooms_number%> salle de bains</li>
+        <li class="etat"> <%= @project.building_date%> </li>
+        </ul>
+		  </div>
+	  </div>
+  </div>
+</div>
+  <% end %>
 <%= render "shared/footer" %>

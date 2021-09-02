@@ -204,7 +204,8 @@
 
 .recapitulatif-show {
   margin-top: 60px;
-  margin-bottom: -30px;
+  margin-bottom: 35px;
+
 }
 
 .cards-row1-recapitulatif-show, .cards-row2-recapitulatif-show {
@@ -311,4 +312,101 @@
 .background-infosaved {
   background-color: #ece9fd;
   position: relative;
+}
+
+////////////////////////////////ANNONCE///////////////////////////////////
+
+.background-annonce {
+  position: relative;
+}
+
+.annonce-show {
+
+}
+
+.h2-annonce-show {
+  padding-top: 45px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.annonce-bloc {
+border: 1px solid #000;
+margin-top: 6%;
+margin-bottom: 6%;
+margin-left: 13%;
+margin-right: 13%;
+background-color: white;
+}
+
+.top {
+  padding: 2% 3%;
+  padding-bottom: 0%;
+}
+
+.ti {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 260px);
+    font-weight: 400;
+    font-stretch: normal;
+    font-size: 30px;
+}
+
+.prix {
+  display: inline-block;
+  vertical-align: middle;
+  width: 260px;
+  font-size: 33px;
+  font-weight: 800;
+  text-align: right;
+  color: #8C30F5;
+}
+
+.desc {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.detail {
+  width: 39%;
+  border-top: 1px solid #000;
+  position: relative;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.pictos_biens li {
+    width: 100%;
+    padding-right: 0;
+    font-size: 13px;
+    margin-top: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    padding: 0 35px;
+    font-weight: 500;
+    font-stretch: normal;
+    background-repeat: no-repeat;
+    background-size: 23px 23px;
+    background-position: left center;
+    line-height: 16px;
+    min-height: 23px;
+}
+
+.chambres {
+    background-image: url("picto_chambres.png");
+}
+
+.etat {
+    background-image: url("picto_etat.png");
+}
+
+.sdb {
+    background-image: url("picto_sdb.png");
+}
+
+.surface {
+    background-image: url("picto_3.png");
 }
