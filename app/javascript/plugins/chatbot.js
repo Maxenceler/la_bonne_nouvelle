@@ -13,10 +13,10 @@ const displayNextQuestion = (currentQuestion) => {
     const futureQuestion = document.querySelector(`#${selector}`)
     futureQuestion.classList.remove("d-none");
     opacityTransition(futureQuestion)
-    futureQuestion.children[1].scrollIntoView()
+    futureQuestion.children[1].scrollIntoView({ behavior: "smooth" })
     displayNextQuestion(futureQuestion)
   } else {
-    currentQuestion.children[1].scrollIntoView()
+    currentQuestion.children[1].scrollIntoView({ behavior: "smooth" })
   }
 
 }
@@ -43,7 +43,7 @@ const saveAnswers = (responseId, projectId) => {
 const opacityTransition = (question) => {
   const arrayChildren = Array.from(question.children)
   setTimeout(() => {
-    question.scrollIntoView()
+    question.scrollIntoView({ behavior: "smooth" })
     question.insertAdjacentHTML("afterbegin", fakeTyping)
   }, 500);
 

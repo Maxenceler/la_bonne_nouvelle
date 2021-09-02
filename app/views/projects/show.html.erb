@@ -162,8 +162,8 @@
 
     <div class="desc">
       <%#= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner rounded-0", style="">
+      <div id="carouselExampleControls" class="carousel slide h-100" data-ride="carousel">
+        <div class="carousel-inner rounded-0 h-100", style="">
           <div class="carousel-item active">
             <%= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
           </div>
