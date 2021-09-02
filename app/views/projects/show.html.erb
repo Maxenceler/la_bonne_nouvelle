@@ -139,7 +139,7 @@
 
 
   <%# ANNONCE %>
-  <% if @project.main_photo != nil %>
+  <% if @project.main_photo.attached? %>
 <div class="background-annonce">
   <div class="annonce-show">
     <h2 class="h2-annonce-show">Pré-visualisation de votre annonce</h2>
@@ -163,7 +163,7 @@
     <div class="desc">
       <%#= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner rounded-0">
+        <div class="carousel-inner rounded-0", style="">
           <div class="carousel-item active">
             <%= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
           </div>
