@@ -1,12 +1,13 @@
-<div class="container", style="margin-top: 25px;">
+<div class="container", style="margin-top: 3%;">
   <div class="d-flex">
-    <div class="", style="padding: 40px">
+    <div class="form-part">
 
       <%= simple_form_for(@project) do |f| %>
 
         <%= f.input :title, label: false, placeholder: "Titre" %>
         <%= f.input :address, label: false, placeholder: "Adresse" %>
-        <div class="align-form-by-two-index">
+
+        <div class="align-form-by-two-index" style="grid-gap: 2px 24px;">
           <%= f.input :project_type, label: false, default: "Type", collection: ["Appartement", "Maison"] %>
           <%= f.input :selling_price, label: false, placeholder: "Prix de vente"%>
           <%# f.input :buildable, label: false, placeholder: "Terrain constructible ?"%>
@@ -16,14 +17,14 @@
           <%= f.input :rooms_number, label: false, placeholder: "Nombre d'autres pièces" %>
           <%# <%= f.input :bedrooms_number, label: false, placeholder: "Nombre de chambres" %>
           <%= f.input :building_date, label: false, placeholder: "Date de construction" %>
-        </div>
-
-        <div class="align-form-by-two-index">
           <%= f.input :main_photo, label: "Photo principale", as: :file %>
           <%= f.input :photos, label: "Autres photos", as: :file, input_html: { multiple: true } %>
         </div>
-      <%= f.button :submit, "Créer votre annonce", class: "btn-lbn-pl", style: "background-color: #8C30F5; border-radius: 10px; margin-left:0px" %>
-  <% end %>
+
+        <div class="div-button-announce">
+        <%= f.button :submit, "Créer votre annonce", class: "create-announce-button btn-lbn-pl" %>
+        </div>
+      <% end %>
     </div>
 
     <div>

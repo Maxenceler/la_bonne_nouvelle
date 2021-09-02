@@ -1,3 +1,21 @@
 .create-announce-button {
   background-color: #8C30F5;
+  border-radius: 10px;
+  margin-left:0px;
+  margin-top: 5%;
+}
+
+.div-button-announce {
+  display: flex;
+  justify-content: center;
+}
+
+.form-part {
+  border: 1px solid #8C30F5;
+  border-radius: 5px;
+  padding-bottom: 2%;
+  padding-top: 3%;
+  margin-right: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
 }
