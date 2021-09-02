@@ -46,8 +46,8 @@ response1A = Response.create!(question: question1A, content: "Absolument !", nex
 
 response1B = Response.create!(question: question1A, content: "Non merci", next_question_name: "tres-bien-estimation")
 
-question1B = Question.create!(step: step1, content: "Dans votre quartier, les prix au mètre carré pour les maisons sont en moyenne de %s.
-D’après mon expérience et les dernières transactions réalisées, votre bien a une valeur comprise entre  %s et %s. ", name: "premiere-estimation", next_question_name: "choix-notaire")
+question1B = Question.create!(step: step1, content: "Dans votre quartier, les prix au mètre carré pour les maisons sont en moyenne de 200 000 €.
+D’après mon expérience et les dernières transactions réalisées, votre bien a une valeur comprise entre  190 000 € et 210 000 €.", name: "premiere-estimation", next_question_name: "choix-notaire")
 
 question1C = Question.create!(step: step1, content: "Très bien", name: "tres-bien-estimation", next_question_name: "choix-notaire")
 

@@ -30,7 +30,6 @@
   overflow: scroll;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   color: black;
-  width: 450px;
   height: fit-content;
   border-radius: 5px;
 }
@@ -38,23 +37,21 @@
 .card-picture {
   object-fit: cover;
   height: 160px;
-  width: 450px;
   object-position: center;
 }
 
 .card-chatbot > .card-picture {
-  height: 130px;
-  width: 100%;
   object-fit: cover;
+  width: 100%;
 }
 
 .card-content-chatbot {
-  margin-top: 15px;
+  margin-top: 3%;
 }
 
 .info-content-chatbot {
   text-align: justify;
-  font-size: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
+  font-size: 85%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
