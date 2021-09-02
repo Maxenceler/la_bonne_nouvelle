@@ -10,15 +10,13 @@
         <div class="align-form-by-two-index" style="grid-gap: 2px 24px;">
           <%= f.input :project_type, label: false, default: "Type", collection: ["Appartement", "Maison"] %>
           <%= f.input :selling_price, label: false, placeholder: "Prix de vente"%>
-          <%# f.input :buildable, label: false, placeholder: "Terrain constructible ?"%>
           <%= f.input :living_area, label: false, placeholder: "Surface habitable" %>
-          <%# f.input :non_living_area, label: false, placeholder: "Surface non habitable" %>
           <%= f.input :bathrooms_number, label: false, placeholder: "Nombre de salles de bain" %>
           <%= f.input :rooms_number, label: false, placeholder: "Nombre d'autres pièces" %>
-          <%# <%= f.input :bedrooms_number, label: false, placeholder: "Nombre de chambres" %>
           <%= f.input :building_date, label: false, placeholder: "Date de construction" %>
-          <%= f.input :main_photo, label: "Photo principale", as: :file %>
-          <%= f.input :photos, label: "Autres photos", as: :file, input_html: { multiple: true } %>
+
+          <%= f.input :main_photo, input_html: { hidden: true }, label_html: { class: 'upload-photo'}, label: "📷 Une première photo" %>
+          <%= f.input :photos, input_html: { hidden: true }, label_html: { class: 'upload-photo'}, label: "📷 Ajouter d'autres photos" %>
         </div>
 
         <div class="div-button-announce">
