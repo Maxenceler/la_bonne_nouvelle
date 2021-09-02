@@ -1,6 +1,4 @@
-import { post } from "jquery";
-import { fetchWithToken } from "../utils/fetch_with_token"
-
+import { fetchWithToken } from '../utils/fetch_with_token'
 
 const fakeTyping = `<div class="col-1 fake-writing">
                       <div class="circle-writing"><i class="fas fa-circle circle-chatbot"></i></div>

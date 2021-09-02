@@ -119,7 +119,7 @@
         <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Surface</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.living_area %> m2
+        <p class="content-card-recapitulatif-show"><%= @project.living_area %> m<sup>2</sup>
       </div>
 
       <div class="card-recapitulatif-show">
@@ -127,7 +127,7 @@
         <hr class="hr-recapitulatif-show">
         <p class="content-card-recapitulatif-show-room">
         <% if @project.rooms_number == nil %>
-          /
+          -
           <% else %>
         <%= @project.rooms_number %>
         <% end %></p>
