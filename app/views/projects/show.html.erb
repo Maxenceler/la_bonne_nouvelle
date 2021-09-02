@@ -139,7 +139,7 @@
 
 
   <%# ANNONCE %>
-  <% if @project.main_photo != nil %>
+  <% if @project.main_photo.attached? %>
 <div class="background-annonce">
   <div class="annonce-show">
     <h2 class="h2-annonce-show">Pré-visualisation de votre annonce</h2>
