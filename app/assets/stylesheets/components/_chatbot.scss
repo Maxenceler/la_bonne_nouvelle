@@ -1,15 +1,8 @@
-#big-container-chatbot {
-  text-align: center;
-  margin-top: 40px;
-  margin-left: 60px;
-  width: 850px;
-}
-
-.group-container {
-  width: 850px;
-  margin-left: 60px;
-  margin-top: 40px;
-}
+.big-container-chatbot {
+  margin-top: 3%;
+  width: 65%;
+  margin-left: 17%;
+ }
 
 .question-group {
   display: flex;
@@ -63,17 +56,13 @@
 }
 
 .welcome-message-chatbot {
-  width: 450px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  padding: 10px;
-  font-size: 15px;
+  padding: 2%;
+  font-size: 85%;
 }
 
-.group-container{
-  width: 1000px;
-}
-
+/////////////////////////////POINTSTYPING///////////////////////////////////////
 
 .not-visible {
   opacity: 0;
@@ -101,13 +90,13 @@
   align-items: center;
   justify-content: center;
   padding: 8px 12px;
-  border-radius: 16px;
-  background-color: #C9CCD5;
+  border-radius: 20%;
+  // background-color: rgb(196, 192, 192);
 }
 
 .circle-writing {
-  min-width: 22px;
-  min-height: 25px;
+  min-width: 15px;
+  min-height: 20px;
   position: relative;
 }
 
@@ -115,22 +104,25 @@
   position: absolute;
   top: 4px;
   left: 2px;
-  color: #393E46;
+  color: #8C30F5;
   animation: 0.8s linear 0.4s infinite alternate jumping;
+  font-size: 70%;
 }
 
 .second-circle-chatbot {
   position: absolute;
   top: 4px;
   left: 2px;
-  color: #393E46;
+  color: #8C30F5;
   animation: 0.8s linear 0.7s infinite alternate jumping;
+  font-size: 70%;
 }
 
 .third-circle-chatbot {
   position: absolute;
   top: 4px;
   left: 2px;
-  color: #393E46;
+  color: #8C30F5;
   animation: 0.8s linear 1.1s infinite alternate jumping;
+  font-size: 70%;
 }
