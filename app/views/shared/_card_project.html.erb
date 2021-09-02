@@ -1,30 +1,31 @@
+<div class="card-trip">
+  <%= link_to project_path(project) do  %>
+    <% if project.project_type == "Maison" %>
+      <img src="https://img.netty.immo/product/marcq/VM31698/maison-individuelle-6-pieces-villeneuve-d-ascq-59493-1623757854-VM31698_25_original.jpg" />
+    <% else %>
+      <img src="https://www.lestienne-immobilier.com/crm/images/biens/A/17090/00!609fe1330de3a.jpg" alt="">
+    <%end %>
+  <%end %>
 
-  <div class="card-trip">
-          <%= link_to project_path(project) do  %>
- <% if project.project_type == "Maison" %>
-        <img src="https://images.unsplash.com/photo-1549889699-bbca54432749?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80" />
-      <% else %>
-         <img src="https://images.unsplash.com/photo-1622763846204-5d0bf5031e06?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80" alt="">
-        <%end %>
+  <div class="card-trip-infos">
+    <div>
+      <%= link_to project_path(project) do  %>
+        <h2><%= project.title.capitalize %></h2>
+        <p><%= project.address %></p>
       <%end %>
-
-    <div class="card-trip-infos">
-      <div>
-        <%= link_to project_path(project) do  %>
-          <h2><%= project.title.capitalize %></h2>
-          <p><%= project.address %></p>
-         <%end %>
 
       <div>
         <%= link_to project_path(project), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fas fa-trash trash-fa"></i>
+        <i class="fas fa-trash trash-fa"></i>
         <%end%>
 
         <%= link_to edit_project_path(project) do %>
-             <i class="far fa-edit edit-fa"></i>
+          <i class="far fa-edit edit-fa"></i>
         <%end%>
-      </div>
       </div>
 
     </div>
+
   </div>
+
+</div>
