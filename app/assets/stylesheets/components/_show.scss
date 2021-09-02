@@ -65,7 +65,6 @@
 
 .stepper-item-show::after {
   position: absolute;
-  content: "";
   border-bottom: 2px solid #e8e4e4;
   width: 100%;
   top: 50px;
@@ -88,7 +87,7 @@
 }
 
 .step-counter-show, .step-counter-show.completed, .step-counter-show:hover {
-  color: white;
+
   text-decoration: none;
   width: 100px;
   height: 100px;
@@ -102,6 +101,7 @@
 
 .stepper-item-show.completed .step-counter-show {
   background-color: #8C30F5;
+  color: white;
 }
 
 .step-counter-show:hover {
@@ -162,8 +162,10 @@
 
 #carouselExampleIndicators {
   margin-top: 70px;
-  margin-right: 150px;
-  margin-left: 150px;
+  margin-right: 30%;
+  margin-left: 30%;
+  width: 40%;
+
 }
 
 .carousel-control-prev, .carousel-control-next, .carousel-indicators {
@@ -173,10 +175,11 @@
 .carousel-inner {
   background-color: #F1E4FF;
   border-radius: 10px;
+  height: 300px;
 }
 
 .d-block {
-  height: 200px;
+  height: 300px;
   width: 200px;
   object-fit: cover;
   object-position: center;

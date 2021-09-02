@@ -9,13 +9,18 @@ const fakeTyping = `<div class="col-1 fake-writing">
                     </div>`
 
 const displayNextQuestion = (currentQuestion) => {
+  console.log(currentQuestion.children[1])
   const selector = currentQuestion.dataset.nextQuestionName
   if (selector) {
     const futureQuestion = document.querySelector(`#${selector}`)
     futureQuestion.classList.remove("d-none");
     opacityTransition(futureQuestion)
+    futureQuestion.children[1].scrollIntoView()
     displayNextQuestion(futureQuestion)
+  } else {
+    currentQuestion.children[1].scrollIntoView()
   }
+
 }
 
 const saveAnswers = (responseId, projectId) => {
@@ -40,6 +45,7 @@ const saveAnswers = (responseId, projectId) => {
 const opacityTransition = (question) => {
   const arrayChildren = Array.from(question.children)
   setTimeout(() => {
+    question.scrollIntoView()
     question.insertAdjacentHTML("afterbegin", fakeTyping)
   }, 500);
 
@@ -65,6 +71,7 @@ const handleNewAnswer = (event) => {
 
   const nextAnswer = event.currentTarget.nextElementSibling
 
+
   if (nextAnswer) {
     nextAnswer.classList.add("d-none")
   } else {
@@ -72,7 +79,6 @@ const handleNewAnswer = (event) => {
     previousAnswer.classList.add("d-none")
   }
 
-  nextQuestion.scrollIntoView()
 
   setTimeout(() => {
     displayNextQuestion(nextQuestion)
