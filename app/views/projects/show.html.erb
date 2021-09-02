@@ -161,7 +161,28 @@
     </div>
 
     <div class="desc">
-      <%= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
+      <%#= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner rounded-0", style="">
+          <div class="carousel-item active">
+            <%= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
+          </div>
+          <% @project.photos.each do |photo|%>
+            <div class="carousel-item">
+              <%= cl_image_tag photo.key, crop: :fill, style:"width: inherit"%>
+            </div>
+          <% end %>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
       <div class="detail">
         <p style="font-size:14px; padding: 10%;"> <strong>Marcq en Baroeul</strong>, secteur <strong>Buisson</strong> . Découvrez cette maison se composant d'une entrée desservant d'un espace de vie d'environ 40 m² se composant d'un séjour et une cuisine équipée ainsi qu' une salle de douche et un espace buanderie. À l'étage, vous trouverez 2 chambres avec parquet. Un beau jardin vient parfaire ce bien. </p>

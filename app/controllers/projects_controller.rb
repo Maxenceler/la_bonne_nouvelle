@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-     if @project = Project.update(params_project)
+     if @project.update(params_project)
       redirect_to chatbot_project_path(@project, anchor: "annonce")
     else
       render :edit
@@ -55,6 +55,6 @@ class ProjectsController < ApplicationController
   end
 
   def params_project
-    params.require(:project).permit(:address, :project_type, :estimated_price, :garden_size, :living_area, :rooms_number, :building_date, :non_living_area, :bathrooms_number, :bedrooms_number, :title, :buildable, :latitude, :longitude, :selling_price, :photos, :main_photo)
+    params.require(:project).permit(:address, :project_type, :estimated_price, :garden_size, :living_area, :rooms_number, :building_date, :non_living_area, :bathrooms_number, :bedrooms_number, :title, :buildable, :latitude, :longitude, :selling_price, :main_photo, photos: [])
   end
 end
