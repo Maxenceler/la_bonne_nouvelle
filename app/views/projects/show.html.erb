@@ -34,7 +34,7 @@
 
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1" ></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
     </ol>
@@ -45,8 +45,10 @@
       <div class="col-md-4 col-sm-4 col-xs-4">
         <img class="d-block w-100" src="https://images.unsplash.com/photo-1526280760714-f9e8b26f318f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" alt="First slide">
       </div>
+      <div class="row justify-content-center">
       <div class="carousel-caption d-none d-md-block col-md-8 col-sm-8 col-xs-8 d-none d-md-block">
-        <span class="title-step-carousel"><b>ÉTAPE 1 : Se préparer à la vente</b><br><br>Se renseigner sur les démarches à accomplir, les documents administratifs à se procurer et s’entourer de professionnels compétents constituent les premières étapes de notre parcours.<br><br></span>
+        <span class="title-step-carousel"><b>ÉTAPE 1 : Se préparer à la vente</b><br><br>Se renseigner sur les démarches à accomplir, les documents administratifs obligatoires et s’entourer de professionnels compétents constituent les premières étapes de notre parcours.<br><br></span>
+      </div>
       </div>
       </div>
 
@@ -132,15 +134,9 @@
     <div class="cards-row2-recapitulatif-show">
 
       <div class="card-recapitulatif-show">
-        <p class="title-card-recapitulatif-show">Surface habitable/non-habitable</p>
+        <p class="title-card-recapitulatif-show">Surface habitable</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.living_area %> m2 / <%= @project.non_living_area %> m2</p>
-      </div>
-
-      <div class="card-recapitulatif-show">
-        <p class="title-card-recapitulatif-show">Terrain constructible ?</p>
-        <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.buildable %></p>
+        <p class="content-card-recapitulatif-show"><%= @project.living_area %> m2
       </div>
 
       <div class="card-recapitulatif-show">
