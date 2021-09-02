@@ -1,28 +1,28 @@
 <div class="container", style="margin-top: 25px;">
   <div class="d-flex">
     <div class="", style="padding: 40px">
-  <%= simple_form_for(@project) do |f| %>
 
-      <%= f.input :title, label: false, placeholder: "Titre" %>
-      <%= f.input :address, label: false, placeholder: "Adresse" %>
+      <%= simple_form_for(@project) do |f| %>
 
-      <div class="align-form-by-two-index">
-        <%= f.input :project_type, label: false, default: "Type", collection: ["Appartement", "Maison"] %>
-        <%= f.input :selling_price, label: false, placeholder: "Prix de vente"%>
-        <%# f.input :buildable, label: false, placeholder: "Terrain constructible ?"%>
-        <%= f.input :living_area, label: false, placeholder: "Surface habitable" %>
-        <%# f.input :non_living_area, label: false, placeholder: "Surface non habitable" %>
-        <%= f.input :rooms_number, label: false, placeholder: "Nombre de pièces (hors chambres, cuisines et SDB)" %>
-        <%= f.input :bedrooms_number, label: false, placeholder: "Nombre de chambres" %>
-        <%= f.input :bathrooms_number, label: false, placeholder: "Nombre de salles de bain" %>
-        <%= f.input :building_date, label: false, placeholder: "Date de construction" %>
-      </div>
+        <%= f.input :title, label: false, placeholder: "Titre" %>
+        <%= f.input :address, label: false, placeholder: "Adresse" %>
+        <div class="align-form-by-two-index">
+          <%= f.input :project_type, label: false, default: "Type", collection: ["Appartement", "Maison"] %>
+          <%= f.input :selling_price, label: false, placeholder: "Prix de vente"%>
+          <%# f.input :buildable, label: false, placeholder: "Terrain constructible ?"%>
+          <%= f.input :living_area, label: false, placeholder: "Surface habitable" %>
+          <%# f.input :non_living_area, label: false, placeholder: "Surface non habitable" %>
+          <%= f.input :bathrooms_number, label: false, placeholder: "Nombre de salles de bain" %>
+          <%= f.input :rooms_number, label: false, placeholder: "Nombre d'autres pièces" %>
+          <%# <%= f.input :bedrooms_number, label: false, placeholder: "Nombre de chambres" %>
+          <%= f.input :building_date, label: false, placeholder: "Date de construction" %>
+        </div>
 
-      <div class="align-form-by-two-index">
-        <%= f.input :main_photo, label: "Photo principale", as: :file %>
-        <%= f.input :photos, label: "Autres photos", as: :file, input_html: { multiple: true } %>
-      </div>
-    <%= f.button :submit, "Créer votre annonce", class: "btn-lbn-pl", style: "background-color: #8C30F5; border-radius: 10px; margin-left:0px" %>
+        <div class="align-form-by-two-index">
+          <%= f.input :main_photo, label: "Photo principale", as: :file %>
+          <%= f.input :photos, label: "Autres photos", as: :file, input_html: { multiple: true } %>
+        </div>
+      <%= f.button :submit, "Créer votre annonce", class: "btn-lbn-pl", style: "background-color: #8C30F5; border-radius: 10px; margin-left:0px" %>
   <% end %>
     </div>
 

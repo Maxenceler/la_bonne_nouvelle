@@ -142,12 +142,13 @@
               <%= render "shared/cards_prefaites_chatbot", question: question %>
             </div>
           </div>
-
-          <div class="avatar-answer">
-            <p class="avatar-username-chatbot">Vous</p>
-            <img src="https://us.123rf.com/450wm/vectorkif/vectorkif1902/vectorkif190200052/116556273-expression-du-visage-de-la-femme-en-blouse-bleue-heureuse-%C3%A9motion-f%C3%A9minine-beau-personnage-de-dessin.jpg?ver=6" alt="" class="avatar-chatbot">
-            <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
-          </div>
+          <% if question.next_question_name.nil? %>
+            <div class="avatar-answer">
+              <p class="avatar-username-chatbot">Vous</p>
+              <img src="https://us.123rf.com/450wm/vectorkif/vectorkif1902/vectorkif190200052/116556273-expression-du-visage-de-la-femme-en-blouse-bleue-heureuse-%C3%A9motion-f%C3%A9minine-beau-personnage-de-dessin.jpg?ver=6" alt="" class="avatar-chatbot">
+              <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
+            </div>
+          <% end %>
 
           <div class="answer-flex">
             <% question.responses.each do |response| %>
@@ -168,11 +169,13 @@
             </div>
           </div>
 
-          <div class="avatar-answer">
-            <p class="avatar-username-chatbot">Vous</p>
-            <img src="https://us.123rf.com/450wm/vectorkif/vectorkif1902/vectorkif190200052/116556273-expression-du-visage-de-la-femme-en-blouse-bleue-heureuse-%C3%A9motion-f%C3%A9minine-beau-personnage-de-dessin.jpg?ver=6" alt="" class="avatar-chatbot">
-            <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
-          </div>
+          <% if question.next_question_name.nil? %>
+            <div class="avatar-answer">
+              <p class="avatar-username-chatbot">Vous</p>
+              <img src="https://us.123rf.com/450wm/vectorkif/vectorkif1902/vectorkif190200052/116556273-expression-du-visage-de-la-femme-en-blouse-bleue-heureuse-%C3%A9motion-f%C3%A9minine-beau-personnage-de-dessin.jpg?ver=6" alt="" class="avatar-chatbot">
+              <i class="fas fa-circle" style="margin-left: -15px; color: #71b132; font-size: 15px;"></i>
+            </div>
+          <% end %>
 
           <div class="answer-flex not-visible" >
             <% question.responses.each do |response| %>
