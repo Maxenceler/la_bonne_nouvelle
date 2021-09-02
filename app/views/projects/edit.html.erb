@@ -22,7 +22,19 @@
           <%= f.input :main_photo, label: "Photo principale", as: :file %>
           <%= f.input :photos, label: "Autres photos", as: :file, input_html: { multiple: true } %>
         </div>
+
+
+
       <%= f.button :submit, "Créer votre annonce", class: "btn-lbn-pl", style: "background-color: #8C30F5; border-radius: 10px; margin-left:0px" %>
+
+      <button id="spinner" class="ml-0 btn btn-primary btn-lbn-pl d-none align-items-center justify-content-around disabled" style="height: 40px; border-radius: 10px;">
+        <div class="spinner-border mr-3" role="status" style="height: 24px;width: 24px;">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div>
+          Création en cours
+        </div>
+      </button>
   <% end %>
     </div>
 

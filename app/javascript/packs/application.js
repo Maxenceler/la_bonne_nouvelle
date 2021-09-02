@@ -25,11 +25,13 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initAutocomplete } from '../plugins/init_autocomplete'
 import { editForm, initChatbot } from "../plugins/chatbot"
+import { initSpinner } from "../plugins/spinner"
 
 document.addEventListener('turbolinks:load', () => {
   initChatbot();
   editForm();
   initAutocomplete();
+  initSpinner();
   // Call your functions here, e.g:
   // initSelect2();
 });
