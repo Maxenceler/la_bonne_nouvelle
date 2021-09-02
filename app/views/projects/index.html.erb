@@ -18,13 +18,13 @@
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title title-modal-index" id="exampleModalLongTitle">Votre projet</h5>
+        <%# <div class="modal-header">
+          <h5 class="modal-title title-modal-index", style="font-weight: 800px; font-color: #8C30F5", id="exampleModalLongTitle">Votre projet</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
-        <div class="modal-body">
+        </div> %>
+        <div class="modal-body", style="padding: 2rem">
           <%= simple_form_for(@project) do |f| %>
               <%= f.input :title, label: false, placeholder: "Title" %>
               <%= f.input :address, label: false, placeholder: "Address" %>
@@ -32,7 +32,7 @@
                 <%= f.input :project_type, label: false, default: "Type", collection: ["Appartement", "Maison"] %>
                 <%= f.input :living_area, label: false, placeholder: "Surface" %>
               </div>
-              <%= f.button :submit, "Créer votre projet", class: "w-100 blue-button-form" %>
+              <%= f.button :submit, "Créez votre projet", class: "btn-lbn-pl w-100", style:"margin-left:0px" %>
               <% end %>
         </div>
       </div>

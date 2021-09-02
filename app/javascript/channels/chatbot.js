@@ -1,13 +1,26 @@
 import { post } from "jquery";
 import { fetchWithToken } from "../utils/fetch_with_token"
 
+
+const fakeTyping = `<div class="col-1 fake-writing">
+                      <div class="circle-writing"><i class="fas fa-circle circle-chatbot"></i></div>
+                      <div class="circle-writing"><i class="fas fa-circle second-circle-chatbot"></i></div>
+                      <div class="circle-writing"><i class="fas fa-circle third-circle-chatbot"></i></div>
+                    </div>`
+
 const displayNextQuestion = (currentQuestion) => {
+  console.log(currentQuestion.children[1])
   const selector = currentQuestion.dataset.nextQuestionName
   if (selector) {
     const futureQuestion = document.querySelector(`#${selector}`)
     futureQuestion.classList.remove("d-none");
+    opacityTransition(futureQuestion)
+    futureQuestion.children[1].scrollIntoView()
     displayNextQuestion(futureQuestion)
+  } else {
+    currentQuestion.children[1].scrollIntoView()
   }
+
 }
 
 const saveAnswers = (responseId, projectId) => {
@@ -29,15 +42,36 @@ const saveAnswers = (responseId, projectId) => {
 }
 
 
+const opacityTransition = (question) => {
+  const arrayChildren = Array.from(question.children)
+  setTimeout(() => {
+    question.scrollIntoView()
+    question.insertAdjacentHTML("afterbegin", fakeTyping)
+  }, 500);
+
+  setTimeout(() => {
+    question.children[0].remove()
+  }, 2000);
+  arrayChildren.forEach((child, index) => {
+    setTimeout(() => {
+      child.classList.add("going-visible")
+    }, 2000 + index * 500);
+  })
+}
+
 const handleNewAnswer = (event) => {
   const nextQuestionName = event.currentTarget.dataset.nextQuestionName
   const responseId = event.currentTarget.dataset.responseId
   const projectId = event.currentTarget.dataset.projectId
   saveAnswers(responseId, projectId)
+
   const nextQuestion = document.querySelector(`#${nextQuestionName}`)
   nextQuestion.classList.remove("d-none");
+  opacityTransition(nextQuestion);
+
   const nextAnswer = event.currentTarget.nextElementSibling
-  console.log(nextAnswer)
+
+
   if (nextAnswer) {
     nextAnswer.classList.add("d-none")
   } else {
@@ -45,14 +79,11 @@ const handleNewAnswer = (event) => {
     previousAnswer.classList.add("d-none")
   }
 
-  nextQuestion.scrollIntoView()
-  displayNextQuestion(nextQuestion)
 
+  setTimeout(() => {
+    displayNextQuestion(nextQuestion)
+  }, 2000)
 };
-
-
-
-
 
 const initChatbot = () => {
   const responses = document.querySelectorAll(".answer")
