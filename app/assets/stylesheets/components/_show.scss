@@ -1,6 +1,6 @@
 .titles-show {
   height: 200px;
-  margin-top: 25px;
+  margin-top: 15px;
   margin-bottom: -25px;
 }
 
@@ -28,7 +28,7 @@
 
 .progression-show {
   padding-top: 25px;
-  height: 300px;
+  height: 290px;
 }
 
 .h2-progression-show, .h2-recapitulatif-show, .h2-infosaved-show {
@@ -167,7 +167,7 @@
 ////////////////////////////////CAROUSEL////////////////////////////////////////
 
 #carouselExampleIndicators {
-  margin-top: 70px;
+  margin-top: 40px;
   margin-right: 30%;
   margin-left: 30%;
   width: 40%;
@@ -181,11 +181,11 @@
 .carousel-inner {
   background-color: #F1E4FF;
   border-radius: 10px;
-  height: 300px;
+  height: 290px;
 }
 
 .d-block {
-  height: 300px;
+  height: 290px;
   width: 200px;
   object-fit: cover;
   object-position: center;
@@ -229,15 +229,29 @@
   border-radius: 5px;
 }
 
+.content-card-recapitulatif-show-adresse {
+ font-weight: bold;
+  font-size: 17px;
+  color: #8C30F5;
+}
+
 .card-recapitulatif-show:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
 
 .content-card-recapitulatif-show {
+  margin-top: 10%;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
   color: #8C30F5;
+}
+
+.content-card-recapitulatif-show-room {
+  font-weight: bold;
+  font-size: 34px;
+  color: #8C30F5;
+  margin-top: 10%;
 }
 
 ///////////////////////////////INFOSSAVED///////////////////////////////////////

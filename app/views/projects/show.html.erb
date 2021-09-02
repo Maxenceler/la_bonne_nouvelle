@@ -108,33 +108,17 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Adresse</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.address %></p>
-      </div>
-
-      <div class="card-recapitulatif-show">
-        <p class="title-card-recapitulatif-show">Type de bien</p>
-        <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.project_type %></p>
+        <p class="content-card-recapitulatif-show-adresse"><%= @project.address %></p>
       </div>
 
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Estimation du prix</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.estimated_price %> €</p>
+        <p class="content-card-recapitulatif-show"><%= @project.estimated_price %> 280 000€</p>
       </div>
 
-      <div class="card-recapitulatif-show">
-        <p class="title-card-recapitulatif-show">Date de construction</p>
-        <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.building_date %></p>
-      </div>
-
-    </div>
-
-    <div class="cards-row2-recapitulatif-show">
-
-      <div class="card-recapitulatif-show">
-        <p class="title-card-recapitulatif-show">Surface habitable</p>
+        <div class="card-recapitulatif-show">
+        <p class="title-card-recapitulatif-show">Surface</p>
         <hr class="hr-recapitulatif-show">
         <p class="content-card-recapitulatif-show"><%= @project.living_area %> m2
       </div>
@@ -142,13 +126,12 @@
       <div class="card-recapitulatif-show">
         <p class="title-card-recapitulatif-show">Nombre de pièces</p>
         <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.rooms_number %></p>
-      </div>
-
-      <div class="card-recapitulatif-show">
-        <p class="title-card-recapitulatif-show">Nombre de chambres & SDB</p>
-        <hr class="hr-recapitulatif-show">
-        <p class="content-card-recapitulatif-show"><%= @project.bedrooms_number%> chambres / <%= @project.bathrooms_number %> SDB</p>
+        <p class="content-card-recapitulatif-show-room">
+        <% if @project.rooms_number == nil %>
+          /
+          <% else %>
+        <%= @project.rooms_number %>
+        <% end %></p>
       </div>
 
     </div>
