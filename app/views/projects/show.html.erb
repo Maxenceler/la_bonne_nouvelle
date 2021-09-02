@@ -137,7 +137,9 @@
 
   </div>
 
+
   <%# ANNONCE %>
+  <% if @project.main_photo != nil %>
 <div class="background-annonce">
   <div class="annonce-show">
     <h2 class="h2-annonce-show">Pré-visualisation de votre annonce</h2>
@@ -150,50 +152,27 @@
       </div>
 
       <div class="prix">
-        <span class="prix">315 000 €</span>
+        <span class="prix"> <%= @project.selling_price%>€ </span>
       </div>
     </div>
 
      <div>
-    <h1 style="font-size: 30px; font-weight: 500; text-align: -webkit-left; margin-bottom: 30px; margin-left: 25px">Vente maison 90m2 à Marcq en Baroeul</h1>
+    <h1 style="font-size: 30px; font-weight: 500; text-align: -webkit-left; margin-bottom: 30px; margin-left: 25px">Vente <%= @project.project_type%> <%= @project.living_area %> m<sup>2</sup> à Marcq en Baroeul</h1>
     </div>
 
     <div class="desc">
-
-    <%#CAROUSEL%>
-		  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-          <img class="d-block w-100" src="..." alt="First slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="..." alt="Second slide">
-        </div>
-        <div class="carousel-item">
-         <img class="d-block w-100" src="..." alt="Third slide">
-        </div>
-      </div>
-
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-       <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-       </a>
-</div>
+      <%= cl_image_tag @project.main_photo.key, crop: :fill, style:"width: inherit"%>
 
       <div class="detail">
-        <p style="font-size:14px; padding: 10%;"> Marcq en Baroeul, secteur Buisson. Découvrez cette maison se composant d'une entrée desservant d'un espace de vie d'environ 40 m² se composant d'un séjour et une cuisine équipée ainsi qu' une salle de douche et un espace buanderie. À l'étage, vous trouverez 2 chambres avec parquet. Un beau jardin vient parfaire ce bien. </p>
+        <p style="font-size:14px; padding: 10%;"> <strong>Marcq en Baroeul</strong>, secteur <strong>Buisson</strong> . Découvrez cette maison se composant d'une entrée desservant d'un espace de vie d'environ 40 m² se composant d'un séjour et une cuisine équipée ainsi qu' une salle de douche et un espace buanderie. À l'étage, vous trouverez 2 chambres avec parquet. Un beau jardin vient parfaire ce bien. </p>
 			  <ul class="pictos_biens">
-        <li class="chambres">3 chambres</li>
-        <li class="sdb">1 salle de bains</li>
-        <li class="etat">1930 </li>
+        <li class="chambres"> <%= @project.rooms_number%> chambres</li>
+        <li class="sdb"> <%= @project.bathrooms_number%> salle de bains</li>
+        <li class="etat"> <%= @project.building_date%> </li>
         </ul>
 		  </div>
 	  </div>
   </div>
 </div>
-
+  <% end %>
 <%= render "shared/footer" %>
