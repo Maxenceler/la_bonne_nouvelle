@@ -316,7 +316,6 @@
 ////////////////////////////////ANNONCE///////////////////////////////////
 
 .background-annonce {
-  background-color: #ece9fd;
   position: relative;
 }
 
@@ -332,7 +331,10 @@
 
 .annonce-bloc {
 border: 1px solid #000;
-margin: 148px;
+margin-top: 6%;
+margin-bottom: 6%;
+margin-left: 10%;
+margin-right: 13%;
 background-color: white;
 }
 
@@ -347,16 +349,16 @@ background-color: white;
     font-weight: 400;
     font-stretch: normal;
     font-size: 30px;
-    line-height: 35px;
 }
 
 .prix {
   display: inline-block;
   vertical-align: middle;
   width: 260px;
-  font-size: 12px;
-  line-height: 20px;
+  font-size: 33px;
+  font-weight: 800;
   text-align: right;
+  color: #8C30F5;
 }
 
 .desc {
@@ -367,7 +369,6 @@ background-color: white;
 
 .detail {
   width: 39%;
-  padding: 25px 30px 130px 30px;
   border-top: 1px solid #000;
   position: relative;
   display: table-cell;
